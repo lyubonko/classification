@@ -1,0 +1,7 @@
+the model used in [src/models/vgg_bn_pre_in3x32x32_out10.py]
+is from here:
+https://download.pytorch.org/models/vgg16_bn-6c64b313.pth
+
+the model should be stored in this folder
+
+
