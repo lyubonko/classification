@@ -1,0 +1,39 @@
+2019-08-08 23:10:10.311288
+
+==== PARAMETERS:
+experiment_name: e0001
+seed: 42
+with_cuda: True
+path_save: experiments/logs/e0001
+new_folder: True
+TRAIN: 
+  resume: 
+  epochs: 150
+  optim: sgd
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0005
+  scheduler: StepLR
+  lr_schedule_step: 40
+  lr_schedule_gamma: 0.1
+MODEL: 
+  name: lenet_in3x28x28_out10
+  init: default
+  weights: 
+DATASET: 
+  name: cifar10
+  path: data/cifar10/
+  batch_size: 128
+  batch_size_val: 256
+  download: False
+  transforms: 
+    train: augment
+    val: init
+  tiny: False
+LOG: 
+  iter_interval: 10
+  visdom: False
+  tensorboard: True
+  do_checkpoint: True
+device: cuda
+

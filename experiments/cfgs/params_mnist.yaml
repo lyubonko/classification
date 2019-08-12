@@ -1,0 +1,31 @@
+# general
+experiment_name: ""              # prefix of all artifacts ('' means None, create next name)
+seed: 42                         # random seed
+with_cuda: True                  # CUDA training
+path_save: "experiments/logs"    # path to save models, checkpoints, logs
+
+TRAIN:
+  resume: ""
+  epochs: 10
+  optim: "sgd"                   # support also "adam", "rmsprop"
+  lr: 0.01                       # this is for "sgd" optimizer
+  momentum: 0.9                  # this is for "sgd" optimizer
+
+MODEL:
+  name: "lenet_in1x28x28_out10"
+  init: "default"
+
+DATASET:
+  name: "mnist"
+  path: "data/mnist"
+  batch_size: 64       # input batch size for training
+  batch_size_val: 256  # input batch size for testing
+  download: False
+  transforms:
+    train: "init"
+    val: "augment"
+
+LOG:
+  iter_interval: 10     # how often (iter) display training details
+  visdom: False
+  do_checkpoint: False

@@ -1,0 +1,39 @@
+# general
+experiment_name: ""              # prefix of all artifacts ('' means None, create next name)
+seed: 42                         # random seed
+with_cuda: True                  # CUDA training
+path_save: "experiments/logs"    # path to save models, checkpoints, logs
+new_folder: True                 # to handle all experiments in new folders
+
+TRAIN:
+  resume: ""
+  epochs: 30
+  optim: "sgd"                   # support also "adam", "rmsprop"
+  lr: 0.01                       # this is for "sgd" optimizer
+  momentum: 0.9                  # this is for "sgd" optimizer
+  weight_decay: 0.0005           #
+  scheduler: "StepLR"            # "StepLR" or ""
+  lr_schedule_step: 40           #
+  lr_schedule_gamma: 0.1         #
+
+MODEL:
+  name: "lenet_in3x32x32_out47"
+  init: "default"
+  weights: ""                    #
+
+DATASET:
+  name: "dtd"
+  path: "data/dtd"
+  batch_size: 32       # input batch size for training
+  batch_size_val: 64   # input batch size for testing
+  download: False
+  transforms:
+    train: "init"
+    val: "init"
+  tiny: False
+
+LOG:
+  iter_interval: 10     # how often (iter) display training details
+  visdom: False
+  tensorboard: True
+  do_checkpoint: False

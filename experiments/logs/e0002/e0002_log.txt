@@ -1,0 +1,1021 @@
+2019-08-08 23:11:43.894258
+
+==== PARAMETERS:
+experiment_name: e0002
+seed: 42
+with_cuda: True
+path_save: experiments/logs/e0002
+new_folder: True
+TRAIN: 
+  resume: 
+  epochs: 150
+  optim: sgd
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0005
+  scheduler: StepLR
+  lr_schedule_step: 40
+  lr_schedule_gamma: 0.1
+MODEL: 
+  name: lenet_in3x32x32_out10
+  init: default
+  weights: 
+DATASET: 
+  name: cifar10
+  path: data/cifar10/
+  batch_size: 128
+  batch_size_val: 256
+  download: False
+  transforms: 
+    train: augment
+    val: init
+  tiny: False
+LOG: 
+  iter_interval: 10
+  visdom: False
+  tensorboard: True
+  do_checkpoint: True
+device: cuda
+
+
+==== NET MODEL:
+LeNet3x32x32(
+  (conv1): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(in_features=400, out_features=120, bias=True)
+  (fc2): Linear(in_features=120, out_features=84, bias=True)
+  (fc3): Linear(in_features=84, out_features=10, bias=True)
+)
+==== OPTIMIZER:
+SGD (
+Parameter Group 0
+    dampening: 0
+    initial_lr: 0.01
+    lr: 0.01
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0.0005
+)
+
+==== SCHEDULER:
+<torch.optim.lr_scheduler.StepLR object at 0x7f8c046a80b8>
+
+==== DATASET (TRAIN):
+Dataset CIFAR10
+    Number of datapoints: 50000
+    Root location: data/cifar10/
+    Split: Train
+
+==== DATASET (VAL):
+Dataset CIFAR10
+    Number of datapoints: 10000
+    Root location: data/cifar10/
+    Split: Test
+
+[e0002] Epoch[  0  / 150 ] Iteration[  0  / 391 ] Loss: 2.3025 Time: 00:00:00:04
+[e0002] Epoch[  0  / 150 ] Iteration[ 10  / 391 ] Loss: 2.3036 Time: 00:00:00:04
+[e0002] Epoch[  0  / 150 ] Iteration[ 20  / 391 ] Loss: 2.2961 Time: 00:00:00:04
+[e0002] Epoch[  0  / 150 ] Iteration[ 30  / 391 ] Loss: 2.2933 Time: 00:00:00:04
+[e0002] Epoch[  0  / 150 ] Iteration[ 40  / 391 ] Loss: 2.2922 Time: 00:00:00:04
+[e0002] Epoch[  0  / 150 ] Iteration[ 50  / 391 ] Loss: 2.2761 Time: 00:00:00:05
+[e0002] Epoch[  0  / 150 ] Iteration[ 60  / 391 ] Loss: 2.2413 Time: 00:00:00:05
+[e0002] Epoch[  0  / 150 ] Iteration[ 70  / 391 ] Loss: 2.1903 Time: 00:00:00:05
+[e0002] Epoch[  0  / 150 ] Iteration[ 80  / 391 ] Loss: 2.0839 Time: 00:00:00:05
+[e0002] Epoch[  0  / 150 ] Iteration[ 90  / 391 ] Loss: 2.0906 Time: 00:00:00:05
+[e0002] Epoch[  0  / 150 ] Iteration[ 100 / 391 ] Loss: 2.0523 Time: 00:00:00:05
+[e0002] Epoch[  0  / 150 ] Iteration[ 110 / 391 ] Loss: 2.0409 Time: 00:00:00:06
+[e0002] Epoch[  0  / 150 ] Iteration[ 120 / 391 ] Loss: 2.0227 Time: 00:00:00:06
+[e0002] Epoch[  0  / 150 ] Iteration[ 130 / 391 ] Loss: 2.0027 Time: 00:00:00:06
+[e0002] Epoch[  0  / 150 ] Iteration[ 140 / 391 ] Loss: 1.9752 Time: 00:00:00:06
+[e0002] Epoch[  0  / 150 ] Iteration[ 150 / 391 ] Loss: 2.0228 Time: 00:00:00:06
+[e0002] Epoch[  0  / 150 ] Iteration[ 160 / 391 ] Loss: 1.9432 Time: 00:00:00:06
+[e0002] Epoch[  0  / 150 ] Iteration[ 170 / 391 ] Loss: 1.9481 Time: 00:00:00:07
+[e0002] Epoch[  0  / 150 ] Iteration[ 180 / 391 ] Loss: 1.8946 Time: 00:00:00:07
+[e0002] Epoch[  0  / 150 ] Iteration[ 190 / 391 ] Loss: 1.8684 Time: 00:00:00:07
+[e0002] Epoch[  0  / 150 ] Iteration[ 200 / 391 ] Loss: 1.7577 Time: 00:00:00:07
+[e0002] Epoch[  0  / 150 ] Iteration[ 210 / 391 ] Loss: 1.8093 Time: 00:00:00:07
+[e0002] Epoch[  0  / 150 ] Iteration[ 220 / 391 ] Loss: 1.9376 Time: 00:00:00:07
+[e0002] Epoch[  0  / 150 ] Iteration[ 230 / 391 ] Loss: 1.7372 Time: 00:00:00:08
+[e0002] Epoch[  0  / 150 ] Iteration[ 240 / 391 ] Loss: 1.6530 Time: 00:00:00:08
+[e0002] Epoch[  0  / 150 ] Iteration[ 250 / 391 ] Loss: 1.6700 Time: 00:00:00:08
+[e0002] Epoch[  0  / 150 ] Iteration[ 260 / 391 ] Loss: 1.7695 Time: 00:00:00:08
+[e0002] Epoch[  0  / 150 ] Iteration[ 270 / 391 ] Loss: 1.7806 Time: 00:00:00:08
+[e0002] Epoch[  0  / 150 ] Iteration[ 280 / 391 ] Loss: 1.6158 Time: 00:00:00:08
+[e0002] Epoch[  0  / 150 ] Iteration[ 290 / 391 ] Loss: 1.8232 Time: 00:00:00:08
+[e0002] Epoch[  0  / 150 ] Iteration[ 300 / 391 ] Loss: 1.9057 Time: 00:00:00:09
+[e0002] Epoch[  0  / 150 ] Iteration[ 310 / 391 ] Loss: 1.8559 Time: 00:00:00:09
+[e0002] Epoch[  0  / 150 ] Iteration[ 320 / 391 ] Loss: 1.8010 Time: 00:00:00:09
+[e0002] Epoch[  0  / 150 ] Iteration[ 330 / 391 ] Loss: 1.6668 Time: 00:00:00:09
+[e0002] Epoch[  0  / 150 ] Iteration[ 340 / 391 ] Loss: 1.7651 Time: 00:00:00:09
+[e0002] Epoch[  0  / 150 ] Iteration[ 350 / 391 ] Loss: 1.6801 Time: 00:00:00:09
+[e0002] Epoch[  0  / 150 ] Iteration[ 360 / 391 ] Loss: 1.6551 Time: 00:00:00:10
+[e0002] Epoch[  0  / 150 ] Iteration[ 370 / 391 ] Loss: 1.6663 Time: 00:00:00:10
+[e0002] Epoch[  0  / 150 ] Iteration[ 380 / 391 ] Loss: 1.7065 Time: 00:00:00:10
+[e0002] Epoch[  0  / 150 ] Iteration[ 390 / 391 ] Loss: 1.8428 Time: 00:00:00:10
+Epoch [  1  ]: Train Avg accuracy: 37.7880; Train Avg loss: 1.7040 
+               Valid Avg accuracy: 40.2600; Valid Avg loss: 1.6350 
+               Time: 00:00:00:17
+               BEST MODEL SAVED
+[e0002] Epoch[  1  / 150 ] Iteration[  0  / 391 ] Loss: 1.9259 Time: 00:00:00:17
+[e0002] Epoch[  1  / 150 ] Iteration[ 10  / 391 ] Loss: 1.4456 Time: 00:00:00:17
+[e0002] Epoch[  1  / 150 ] Iteration[ 20  / 391 ] Loss: 1.5730 Time: 00:00:00:18
+[e0002] Epoch[  1  / 150 ] Iteration[ 30  / 391 ] Loss: 1.6145 Time: 00:00:00:18
+[e0002] Epoch[  1  / 150 ] Iteration[ 40  / 391 ] Loss: 1.5924 Time: 00:00:00:18
+[e0002] Epoch[  1  / 150 ] Iteration[ 50  / 391 ] Loss: 1.6173 Time: 00:00:00:18
+[e0002] Epoch[  1  / 150 ] Iteration[ 60  / 391 ] Loss: 1.6599 Time: 00:00:00:18
+[e0002] Epoch[  1  / 150 ] Iteration[ 70  / 391 ] Loss: 1.5833 Time: 00:00:00:18
+[e0002] Epoch[  1  / 150 ] Iteration[ 80  / 391 ] Loss: 1.4936 Time: 00:00:00:19
+[e0002] Epoch[  1  / 150 ] Iteration[ 90  / 391 ] Loss: 1.5129 Time: 00:00:00:19
+[e0002] Epoch[  1  / 150 ] Iteration[ 100 / 391 ] Loss: 1.5602 Time: 00:00:00:19
+[e0002] Epoch[  1  / 150 ] Iteration[ 110 / 391 ] Loss: 1.6714 Time: 00:00:00:19
+[e0002] Epoch[  1  / 150 ] Iteration[ 120 / 391 ] Loss: 1.7142 Time: 00:00:00:19
+[e0002] Epoch[  1  / 150 ] Iteration[ 130 / 391 ] Loss: 1.5650 Time: 00:00:00:19
+[e0002] Epoch[  1  / 150 ] Iteration[ 140 / 391 ] Loss: 1.4086 Time: 00:00:00:20
+[e0002] Epoch[  1  / 150 ] Iteration[ 150 / 391 ] Loss: 1.4754 Time: 00:00:00:20
+[e0002] Epoch[  1  / 150 ] Iteration[ 160 / 391 ] Loss: 1.7913 Time: 00:00:00:20
+[e0002] Epoch[  1  / 150 ] Iteration[ 170 / 391 ] Loss: 1.5659 Time: 00:00:00:20
+[e0002] Epoch[  1  / 150 ] Iteration[ 180 / 391 ] Loss: 1.5892 Time: 00:00:00:20
+[e0002] Epoch[  1  / 150 ] Iteration[ 190 / 391 ] Loss: 1.5234 Time: 00:00:00:20
+[e0002] Epoch[  1  / 150 ] Iteration[ 200 / 391 ] Loss: 1.4626 Time: 00:00:00:20
+[e0002] Epoch[  1  / 150 ] Iteration[ 210 / 391 ] Loss: 1.4137 Time: 00:00:00:21
+[e0002] Epoch[  1  / 150 ] Iteration[ 220 / 391 ] Loss: 1.5133 Time: 00:00:00:21
+[e0002] Epoch[  1  / 150 ] Iteration[ 230 / 391 ] Loss: 1.4008 Time: 00:00:00:21
+[e0002] Epoch[  1  / 150 ] Iteration[ 240 / 391 ] Loss: 1.4183 Time: 00:00:00:21
+[e0002] Epoch[  1  / 150 ] Iteration[ 250 / 391 ] Loss: 1.4722 Time: 00:00:00:21
+[e0002] Epoch[  1  / 150 ] Iteration[ 260 / 391 ] Loss: 1.5034 Time: 00:00:00:21
+[e0002] Epoch[  1  / 150 ] Iteration[ 270 / 391 ] Loss: 1.6183 Time: 00:00:00:22
+[e0002] Epoch[  1  / 150 ] Iteration[ 280 / 391 ] Loss: 1.4564 Time: 00:00:00:22
+[e0002] Epoch[  1  / 150 ] Iteration[ 290 / 391 ] Loss: 1.5187 Time: 00:00:00:22
+[e0002] Epoch[  1  / 150 ] Iteration[ 300 / 391 ] Loss: 1.6733 Time: 00:00:00:22
+[e0002] Epoch[  1  / 150 ] Iteration[ 310 / 391 ] Loss: 1.4144 Time: 00:00:00:22
+[e0002] Epoch[  1  / 150 ] Iteration[ 320 / 391 ] Loss: 1.5414 Time: 00:00:00:22
+[e0002] Epoch[  1  / 150 ] Iteration[ 330 / 391 ] Loss: 1.4192 Time: 00:00:00:23
+[e0002] Epoch[  1  / 150 ] Iteration[ 340 / 391 ] Loss: 1.5521 Time: 00:00:00:23
+[e0002] Epoch[  1  / 150 ] Iteration[ 350 / 391 ] Loss: 1.4774 Time: 00:00:00:23
+[e0002] Epoch[  1  / 150 ] Iteration[ 360 / 391 ] Loss: 1.4924 Time: 00:00:00:23
+[e0002] Epoch[  1  / 150 ] Iteration[ 370 / 391 ] Loss: 1.5734 Time: 00:00:00:23
+[e0002] Epoch[  1  / 150 ] Iteration[ 380 / 391 ] Loss: 1.2970 Time: 00:00:00:23
+[e0002] Epoch[  1  / 150 ] Iteration[ 390 / 391 ] Loss: 1.5063 Time: 00:00:00:24
+Epoch [  2  ]: Train Avg accuracy: 47.9840; Train Avg loss: 1.4548 
+               Valid Avg accuracy: 50.4100; Valid Avg loss: 1.3766 
+               Time: 00:00:00:31
+               BEST MODEL SAVED
+[e0002] Epoch[  2  / 150 ] Iteration[  0  / 391 ] Loss: 1.3795 Time: 00:00:00:31
+[e0002] Epoch[  2  / 150 ] Iteration[ 10  / 391 ] Loss: 1.4515 Time: 00:00:00:31
+[e0002] Epoch[  2  / 150 ] Iteration[ 20  / 391 ] Loss: 1.4008 Time: 00:00:00:31
+[e0002] Epoch[  2  / 150 ] Iteration[ 30  / 391 ] Loss: 1.4925 Time: 00:00:00:31
+[e0002] Epoch[  2  / 150 ] Iteration[ 40  / 391 ] Loss: 1.4918 Time: 00:00:00:32
+[e0002] Epoch[  2  / 150 ] Iteration[ 50  / 391 ] Loss: 1.4602 Time: 00:00:00:32
+[e0002] Epoch[  2  / 150 ] Iteration[ 60  / 391 ] Loss: 1.5287 Time: 00:00:00:32
+[e0002] Epoch[  2  / 150 ] Iteration[ 70  / 391 ] Loss: 1.4500 Time: 00:00:00:32
+[e0002] Epoch[  2  / 150 ] Iteration[ 80  / 391 ] Loss: 1.3031 Time: 00:00:00:32
+[e0002] Epoch[  2  / 150 ] Iteration[ 90  / 391 ] Loss: 1.3862 Time: 00:00:00:32
+[e0002] Epoch[  2  / 150 ] Iteration[ 100 / 391 ] Loss: 1.3655 Time: 00:00:00:33
+[e0002] Epoch[  2  / 150 ] Iteration[ 110 / 391 ] Loss: 1.3953 Time: 00:00:00:33
+[e0002] Epoch[  2  / 150 ] Iteration[ 120 / 391 ] Loss: 1.5405 Time: 00:00:00:33
+[e0002] Epoch[  2  / 150 ] Iteration[ 130 / 391 ] Loss: 1.4793 Time: 00:00:00:33
+[e0002] Epoch[  2  / 150 ] Iteration[ 140 / 391 ] Loss: 1.4395 Time: 00:00:00:33
+[e0002] Epoch[  2  / 150 ] Iteration[ 150 / 391 ] Loss: 1.4465 Time: 00:00:00:33
+[e0002] Epoch[  2  / 150 ] Iteration[ 160 / 391 ] Loss: 1.3693 Time: 00:00:00:34
+[e0002] Epoch[  2  / 150 ] Iteration[ 170 / 391 ] Loss: 1.3448 Time: 00:00:00:34
+[e0002] Epoch[  2  / 150 ] Iteration[ 180 / 391 ] Loss: 1.3747 Time: 00:00:00:34
+[e0002] Epoch[  2  / 150 ] Iteration[ 190 / 391 ] Loss: 1.4259 Time: 00:00:00:34
+[e0002] Epoch[  2  / 150 ] Iteration[ 200 / 391 ] Loss: 1.5406 Time: 00:00:00:34
+[e0002] Epoch[  2  / 150 ] Iteration[ 210 / 391 ] Loss: 1.3358 Time: 00:00:00:34
+[e0002] Epoch[  2  / 150 ] Iteration[ 220 / 391 ] Loss: 1.2878 Time: 00:00:00:34
+[e0002] Epoch[  2  / 150 ] Iteration[ 230 / 391 ] Loss: 1.5128 Time: 00:00:00:35
+[e0002] Epoch[  2  / 150 ] Iteration[ 240 / 391 ] Loss: 1.3933 Time: 00:00:00:35
+[e0002] Epoch[  2  / 150 ] Iteration[ 250 / 391 ] Loss: 1.4013 Time: 00:00:00:35
+[e0002] Epoch[  2  / 150 ] Iteration[ 260 / 391 ] Loss: 1.4940 Time: 00:00:00:35
+[e0002] Epoch[  2  / 150 ] Iteration[ 270 / 391 ] Loss: 1.4683 Time: 00:00:00:35
+[e0002] Epoch[  2  / 150 ] Iteration[ 280 / 391 ] Loss: 1.4351 Time: 00:00:00:35
+[e0002] Epoch[  2  / 150 ] Iteration[ 290 / 391 ] Loss: 1.4669 Time: 00:00:00:36
+[e0002] Epoch[  2  / 150 ] Iteration[ 300 / 391 ] Loss: 1.5069 Time: 00:00:00:36
+[e0002] Epoch[  2  / 150 ] Iteration[ 310 / 391 ] Loss: 1.3327 Time: 00:00:00:36
+[e0002] Epoch[  2  / 150 ] Iteration[ 320 / 391 ] Loss: 1.4122 Time: 00:00:00:36
+[e0002] Epoch[  2  / 150 ] Iteration[ 330 / 391 ] Loss: 1.4459 Time: 00:00:00:36
+[e0002] Epoch[  2  / 150 ] Iteration[ 340 / 391 ] Loss: 1.4098 Time: 00:00:00:36
+[e0002] Epoch[  2  / 150 ] Iteration[ 350 / 391 ] Loss: 1.2560 Time: 00:00:00:37
+[e0002] Epoch[  2  / 150 ] Iteration[ 360 / 391 ] Loss: 1.1633 Time: 00:00:00:37
+[e0002] Epoch[  2  / 150 ] Iteration[ 370 / 391 ] Loss: 1.3189 Time: 00:00:00:37
+[e0002] Epoch[  2  / 150 ] Iteration[ 380 / 391 ] Loss: 1.2695 Time: 00:00:00:37
+[e0002] Epoch[  2  / 150 ] Iteration[ 390 / 391 ] Loss: 1.2957 Time: 00:00:00:37
+Epoch [  3  ]: Train Avg accuracy: 53.2940; Train Avg loss: 1.3243 
+               Valid Avg accuracy: 55.3100; Valid Avg loss: 1.2651 
+               Time: 00:00:00:45
+               BEST MODEL SAVED
+[e0002] Epoch[  3  / 150 ] Iteration[  0  / 391 ] Loss: 1.3760 Time: 00:00:00:45
+[e0002] Epoch[  3  / 150 ] Iteration[ 10  / 391 ] Loss: 1.3509 Time: 00:00:00:45
+[e0002] Epoch[  3  / 150 ] Iteration[ 20  / 391 ] Loss: 1.3233 Time: 00:00:00:45
+[e0002] Epoch[  3  / 150 ] Iteration[ 30  / 391 ] Loss: 1.3486 Time: 00:00:00:45
+[e0002] Epoch[  3  / 150 ] Iteration[ 40  / 391 ] Loss: 1.3162 Time: 00:00:00:45
+[e0002] Epoch[  3  / 150 ] Iteration[ 50  / 391 ] Loss: 1.2426 Time: 00:00:00:45
+[e0002] Epoch[  3  / 150 ] Iteration[ 60  / 391 ] Loss: 1.4747 Time: 00:00:00:46
+[e0002] Epoch[  3  / 150 ] Iteration[ 70  / 391 ] Loss: 1.3654 Time: 00:00:00:46
+[e0002] Epoch[  3  / 150 ] Iteration[ 80  / 391 ] Loss: 1.3505 Time: 00:00:00:46
+[e0002] Epoch[  3  / 150 ] Iteration[ 90  / 391 ] Loss: 1.3722 Time: 00:00:00:46
+[e0002] Epoch[  3  / 150 ] Iteration[ 100 / 391 ] Loss: 1.2837 Time: 00:00:00:46
+[e0002] Epoch[  3  / 150 ] Iteration[ 110 / 391 ] Loss: 1.3789 Time: 00:00:00:46
+[e0002] Epoch[  3  / 150 ] Iteration[ 120 / 391 ] Loss: 1.3736 Time: 00:00:00:47
+[e0002] Epoch[  3  / 150 ] Iteration[ 130 / 391 ] Loss: 1.2950 Time: 00:00:00:47
+[e0002] Epoch[  3  / 150 ] Iteration[ 140 / 391 ] Loss: 1.2405 Time: 00:00:00:47
+[e0002] Epoch[  3  / 150 ] Iteration[ 150 / 391 ] Loss: 1.3137 Time: 00:00:00:47
+[e0002] Epoch[  3  / 150 ] Iteration[ 160 / 391 ] Loss: 1.3554 Time: 00:00:00:47
+[e0002] Epoch[  3  / 150 ] Iteration[ 170 / 391 ] Loss: 1.4523 Time: 00:00:00:47
+[e0002] Epoch[  3  / 150 ] Iteration[ 180 / 391 ] Loss: 1.3367 Time: 00:00:00:48
+[e0002] Epoch[  3  / 150 ] Iteration[ 190 / 391 ] Loss: 1.3770 Time: 00:00:00:48
+[e0002] Epoch[  3  / 150 ] Iteration[ 200 / 391 ] Loss: 1.2862 Time: 00:00:00:48
+[e0002] Epoch[  3  / 150 ] Iteration[ 210 / 391 ] Loss: 1.3387 Time: 00:00:00:48
+[e0002] Epoch[  3  / 150 ] Iteration[ 220 / 391 ] Loss: 1.5358 Time: 00:00:00:48
+[e0002] Epoch[  3  / 150 ] Iteration[ 230 / 391 ] Loss: 1.3325 Time: 00:00:00:48
+[e0002] Epoch[  3  / 150 ] Iteration[ 240 / 391 ] Loss: 1.1393 Time: 00:00:00:49
+[e0002] Epoch[  3  / 150 ] Iteration[ 250 / 391 ] Loss: 1.4177 Time: 00:00:00:49
+[e0002] Epoch[  3  / 150 ] Iteration[ 260 / 391 ] Loss: 1.1807 Time: 00:00:00:49
+[e0002] Epoch[  3  / 150 ] Iteration[ 270 / 391 ] Loss: 1.4309 Time: 00:00:00:49
+[e0002] Epoch[  3  / 150 ] Iteration[ 280 / 391 ] Loss: 1.4377 Time: 00:00:00:49
+[e0002] Epoch[  3  / 150 ] Iteration[ 290 / 391 ] Loss: 1.3403 Time: 00:00:00:49
+[e0002] Epoch[  3  / 150 ] Iteration[ 300 / 391 ] Loss: 1.2589 Time: 00:00:00:50
+[e0002] Epoch[  3  / 150 ] Iteration[ 310 / 391 ] Loss: 1.2447 Time: 00:00:00:50
+[e0002] Epoch[  3  / 150 ] Iteration[ 320 / 391 ] Loss: 1.4900 Time: 00:00:00:50
+[e0002] Epoch[  3  / 150 ] Iteration[ 330 / 391 ] Loss: 1.2905 Time: 00:00:00:50
+[e0002] Epoch[  3  / 150 ] Iteration[ 340 / 391 ] Loss: 1.1919 Time: 00:00:00:50
+[e0002] Epoch[  3  / 150 ] Iteration[ 350 / 391 ] Loss: 1.4445 Time: 00:00:00:50
+[e0002] Epoch[  3  / 150 ] Iteration[ 360 / 391 ] Loss: 1.3605 Time: 00:00:00:50
+[e0002] Epoch[  3  / 150 ] Iteration[ 370 / 391 ] Loss: 1.4273 Time: 00:00:00:51
+[e0002] Epoch[  3  / 150 ] Iteration[ 380 / 391 ] Loss: 1.1427 Time: 00:00:00:51
+[e0002] Epoch[  3  / 150 ] Iteration[ 390 / 391 ] Loss: 1.2700 Time: 00:00:00:51
+Epoch [  4  ]: Train Avg accuracy: 55.6180; Train Avg loss: 1.2655 
+               Valid Avg accuracy: 57.3100; Valid Avg loss: 1.2063 
+               Time: 00:00:00:58
+               BEST MODEL SAVED
+[e0002] Epoch[  4  / 150 ] Iteration[  0  / 391 ] Loss: 1.3662 Time: 00:00:00:58
+[e0002] Epoch[  4  / 150 ] Iteration[ 10  / 391 ] Loss: 1.2466 Time: 00:00:00:58
+[e0002] Epoch[  4  / 150 ] Iteration[ 20  / 391 ] Loss: 1.3673 Time: 00:00:00:59
+[e0002] Epoch[  4  / 150 ] Iteration[ 30  / 391 ] Loss: 1.3408 Time: 00:00:00:59
+[e0002] Epoch[  4  / 150 ] Iteration[ 40  / 391 ] Loss: 1.3593 Time: 00:00:00:59
+[e0002] Epoch[  4  / 150 ] Iteration[ 50  / 391 ] Loss: 1.3027 Time: 00:00:00:59
+[e0002] Epoch[  4  / 150 ] Iteration[ 60  / 391 ] Loss: 1.3179 Time: 00:00:00:59
+[e0002] Epoch[  4  / 150 ] Iteration[ 70  / 391 ] Loss: 1.3930 Time: 00:00:00:59
+[e0002] Epoch[  4  / 150 ] Iteration[ 80  / 391 ] Loss: 1.1734 Time: 00:00:00:59
+[e0002] Epoch[  4  / 150 ] Iteration[ 90  / 391 ] Loss: 1.4270 Time: 00:00:01:00
+[e0002] Epoch[  4  / 150 ] Iteration[ 100 / 391 ] Loss: 1.6017 Time: 00:00:01:00
+[e0002] Epoch[  4  / 150 ] Iteration[ 110 / 391 ] Loss: 1.4897 Time: 00:00:01:00
+[e0002] Epoch[  4  / 150 ] Iteration[ 120 / 391 ] Loss: 1.2810 Time: 00:00:01:00
+[e0002] Epoch[  4  / 150 ] Iteration[ 130 / 391 ] Loss: 1.2748 Time: 00:00:01:00
+[e0002] Epoch[  4  / 150 ] Iteration[ 140 / 391 ] Loss: 1.2830 Time: 00:00:01:00
+[e0002] Epoch[  4  / 150 ] Iteration[ 150 / 391 ] Loss: 1.3936 Time: 00:00:01:01
+[e0002] Epoch[  4  / 150 ] Iteration[ 160 / 391 ] Loss: 1.3285 Time: 00:00:01:01
+[e0002] Epoch[  4  / 150 ] Iteration[ 170 / 391 ] Loss: 1.4798 Time: 00:00:01:01
+[e0002] Epoch[  4  / 150 ] Iteration[ 180 / 391 ] Loss: 1.2358 Time: 00:00:01:01
+[e0002] Epoch[  4  / 150 ] Iteration[ 190 / 391 ] Loss: 1.3308 Time: 00:00:01:01
+[e0002] Epoch[  4  / 150 ] Iteration[ 200 / 391 ] Loss: 1.4268 Time: 00:00:01:01
+[e0002] Epoch[  4  / 150 ] Iteration[ 210 / 391 ] Loss: 1.4034 Time: 00:00:01:01
+[e0002] Epoch[  4  / 150 ] Iteration[ 220 / 391 ] Loss: 1.4110 Time: 00:00:01:02
+[e0002] Epoch[  4  / 150 ] Iteration[ 230 / 391 ] Loss: 1.2538 Time: 00:00:01:02
+[e0002] Epoch[  4  / 150 ] Iteration[ 240 / 391 ] Loss: 1.3500 Time: 00:00:01:02
+[e0002] Epoch[  4  / 150 ] Iteration[ 250 / 391 ] Loss: 1.1452 Time: 00:00:01:02
+[e0002] Epoch[  4  / 150 ] Iteration[ 260 / 391 ] Loss: 1.2996 Time: 00:00:01:02
+[e0002] Epoch[  4  / 150 ] Iteration[ 270 / 391 ] Loss: 1.1678 Time: 00:00:01:02
+[e0002] Epoch[  4  / 150 ] Iteration[ 280 / 391 ] Loss: 1.1782 Time: 00:00:01:03
+[e0002] Epoch[  4  / 150 ] Iteration[ 290 / 391 ] Loss: 1.5149 Time: 00:00:01:03
+[e0002] Epoch[  4  / 150 ] Iteration[ 300 / 391 ] Loss: 1.2431 Time: 00:00:01:03
+[e0002] Epoch[  4  / 150 ] Iteration[ 310 / 391 ] Loss: 1.2586 Time: 00:00:01:03
+[e0002] Epoch[  4  / 150 ] Iteration[ 320 / 391 ] Loss: 1.3002 Time: 00:00:01:03
+[e0002] Epoch[  4  / 150 ] Iteration[ 330 / 391 ] Loss: 1.2508 Time: 00:00:01:03
+[e0002] Epoch[  4  / 150 ] Iteration[ 340 / 391 ] Loss: 1.1473 Time: 00:00:01:04
+[e0002] Epoch[  4  / 150 ] Iteration[ 350 / 391 ] Loss: 1.3782 Time: 00:00:01:04
+[e0002] Epoch[  4  / 150 ] Iteration[ 360 / 391 ] Loss: 1.3676 Time: 00:00:01:04
+[e0002] Epoch[  4  / 150 ] Iteration[ 370 / 391 ] Loss: 1.2895 Time: 00:00:01:04
+[e0002] Epoch[  4  / 150 ] Iteration[ 380 / 391 ] Loss: 1.2369 Time: 00:00:01:04
+[e0002] Epoch[  4  / 150 ] Iteration[ 390 / 391 ] Loss: 1.1070 Time: 00:00:01:04
+Epoch [  5  ]: Train Avg accuracy: 56.8580; Train Avg loss: 1.2197 
+               Valid Avg accuracy: 58.5900; Valid Avg loss: 1.1652 
+               Time: 00:00:01:12
+               BEST MODEL SAVED
+[e0002] Epoch[  5  / 150 ] Iteration[  0  / 391 ] Loss: 1.2807 Time: 00:00:01:12
+[e0002] Epoch[  5  / 150 ] Iteration[ 10  / 391 ] Loss: 1.1358 Time: 00:00:01:12
+[e0002] Epoch[  5  / 150 ] Iteration[ 20  / 391 ] Loss: 1.2938 Time: 00:00:01:12
+[e0002] Epoch[  5  / 150 ] Iteration[ 30  / 391 ] Loss: 1.4461 Time: 00:00:01:12
+[e0002] Epoch[  5  / 150 ] Iteration[ 40  / 391 ] Loss: 1.3323 Time: 00:00:01:12
+[e0002] Epoch[  5  / 150 ] Iteration[ 50  / 391 ] Loss: 1.2052 Time: 00:00:01:12
+[e0002] Epoch[  5  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1969 Time: 00:00:01:13
+[e0002] Epoch[  5  / 150 ] Iteration[ 70  / 391 ] Loss: 1.1759 Time: 00:00:01:13
+[e0002] Epoch[  5  / 150 ] Iteration[ 80  / 391 ] Loss: 1.4418 Time: 00:00:01:13
+[e0002] Epoch[  5  / 150 ] Iteration[ 90  / 391 ] Loss: 1.4181 Time: 00:00:01:13
+[e0002] Epoch[  5  / 150 ] Iteration[ 100 / 391 ] Loss: 1.3016 Time: 00:00:01:13
+[e0002] Epoch[  5  / 150 ] Iteration[ 110 / 391 ] Loss: 1.2144 Time: 00:00:01:14
+[e0002] Epoch[  5  / 150 ] Iteration[ 120 / 391 ] Loss: 1.2461 Time: 00:00:01:14
+[e0002] Epoch[  5  / 150 ] Iteration[ 130 / 391 ] Loss: 1.2090 Time: 00:00:01:14
+[e0002] Epoch[  5  / 150 ] Iteration[ 140 / 391 ] Loss: 1.1021 Time: 00:00:01:14
+[e0002] Epoch[  5  / 150 ] Iteration[ 150 / 391 ] Loss: 1.2048 Time: 00:00:01:14
+[e0002] Epoch[  5  / 150 ] Iteration[ 160 / 391 ] Loss: 1.0483 Time: 00:00:01:14
+[e0002] Epoch[  5  / 150 ] Iteration[ 170 / 391 ] Loss: 1.4090 Time: 00:00:01:14
+[e0002] Epoch[  5  / 150 ] Iteration[ 180 / 391 ] Loss: 1.2506 Time: 00:00:01:15
+[e0002] Epoch[  5  / 150 ] Iteration[ 190 / 391 ] Loss: 1.3298 Time: 00:00:01:15
+[e0002] Epoch[  5  / 150 ] Iteration[ 200 / 391 ] Loss: 1.3878 Time: 00:00:01:15
+[e0002] Epoch[  5  / 150 ] Iteration[ 210 / 391 ] Loss: 1.3314 Time: 00:00:01:15
+[e0002] Epoch[  5  / 150 ] Iteration[ 220 / 391 ] Loss: 1.1665 Time: 00:00:01:15
+[e0002] Epoch[  5  / 150 ] Iteration[ 230 / 391 ] Loss: 1.3899 Time: 00:00:01:15
+[e0002] Epoch[  5  / 150 ] Iteration[ 240 / 391 ] Loss: 1.3616 Time: 00:00:01:16
+[e0002] Epoch[  5  / 150 ] Iteration[ 250 / 391 ] Loss: 1.2781 Time: 00:00:01:16
+[e0002] Epoch[  5  / 150 ] Iteration[ 260 / 391 ] Loss: 1.1524 Time: 00:00:01:16
+[e0002] Epoch[  5  / 150 ] Iteration[ 270 / 391 ] Loss: 1.2849 Time: 00:00:01:16
+[e0002] Epoch[  5  / 150 ] Iteration[ 280 / 391 ] Loss: 1.3465 Time: 00:00:01:16
+[e0002] Epoch[  5  / 150 ] Iteration[ 290 / 391 ] Loss: 1.2313 Time: 00:00:01:16
+[e0002] Epoch[  5  / 150 ] Iteration[ 300 / 391 ] Loss: 1.1283 Time: 00:00:01:17
+[e0002] Epoch[  5  / 150 ] Iteration[ 310 / 391 ] Loss: 1.2875 Time: 00:00:01:17
+[e0002] Epoch[  5  / 150 ] Iteration[ 320 / 391 ] Loss: 1.2856 Time: 00:00:01:17
+[e0002] Epoch[  5  / 150 ] Iteration[ 330 / 391 ] Loss: 1.1133 Time: 00:00:01:17
+[e0002] Epoch[  5  / 150 ] Iteration[ 340 / 391 ] Loss: 1.1466 Time: 00:00:01:17
+[e0002] Epoch[  5  / 150 ] Iteration[ 350 / 391 ] Loss: 1.1705 Time: 00:00:01:17
+[e0002] Epoch[  5  / 150 ] Iteration[ 360 / 391 ] Loss: 1.1002 Time: 00:00:01:18
+[e0002] Epoch[  5  / 150 ] Iteration[ 370 / 391 ] Loss: 1.2315 Time: 00:00:01:18
+[e0002] Epoch[  5  / 150 ] Iteration[ 380 / 391 ] Loss: 1.2241 Time: 00:00:01:18
+[e0002] Epoch[  5  / 150 ] Iteration[ 390 / 391 ] Loss: 1.2692 Time: 00:00:01:18
+Epoch [  6  ]: Train Avg accuracy: 57.9340; Train Avg loss: 1.2060 
+               Valid Avg accuracy: 59.4700; Valid Avg loss: 1.1513 
+               Time: 00:00:01:25
+               BEST MODEL SAVED
+[e0002] Epoch[  6  / 150 ] Iteration[  0  / 391 ] Loss: 1.0853 Time: 00:00:01:25
+[e0002] Epoch[  6  / 150 ] Iteration[ 10  / 391 ] Loss: 1.1522 Time: 00:00:01:25
+[e0002] Epoch[  6  / 150 ] Iteration[ 20  / 391 ] Loss: 1.1004 Time: 00:00:01:26
+[e0002] Epoch[  6  / 150 ] Iteration[ 30  / 391 ] Loss: 1.2307 Time: 00:00:01:26
+[e0002] Epoch[  6  / 150 ] Iteration[ 40  / 391 ] Loss: 1.1243 Time: 00:00:01:26
+[e0002] Epoch[  6  / 150 ] Iteration[ 50  / 391 ] Loss: 1.3772 Time: 00:00:01:26
+[e0002] Epoch[  6  / 150 ] Iteration[ 60  / 391 ] Loss: 1.2121 Time: 00:00:01:26
+[e0002] Epoch[  6  / 150 ] Iteration[ 70  / 391 ] Loss: 1.3158 Time: 00:00:01:26
+[e0002] Epoch[  6  / 150 ] Iteration[ 80  / 391 ] Loss: 1.2577 Time: 00:00:01:27
+[e0002] Epoch[  6  / 150 ] Iteration[ 90  / 391 ] Loss: 1.3908 Time: 00:00:01:27
+[e0002] Epoch[  6  / 150 ] Iteration[ 100 / 391 ] Loss: 1.2410 Time: 00:00:01:27
+[e0002] Epoch[  6  / 150 ] Iteration[ 110 / 391 ] Loss: 1.1802 Time: 00:00:01:27
+[e0002] Epoch[  6  / 150 ] Iteration[ 120 / 391 ] Loss: 1.2529 Time: 00:00:01:27
+[e0002] Epoch[  6  / 150 ] Iteration[ 130 / 391 ] Loss: 1.1571 Time: 00:00:01:27
+[e0002] Epoch[  6  / 150 ] Iteration[ 140 / 391 ] Loss: 1.2276 Time: 00:00:01:28
+[e0002] Epoch[  6  / 150 ] Iteration[ 150 / 391 ] Loss: 1.0988 Time: 00:00:01:28
+[e0002] Epoch[  6  / 150 ] Iteration[ 160 / 391 ] Loss: 1.1676 Time: 00:00:01:28
+[e0002] Epoch[  6  / 150 ] Iteration[ 170 / 391 ] Loss: 1.2231 Time: 00:00:01:28
+[e0002] Epoch[  6  / 150 ] Iteration[ 180 / 391 ] Loss: 1.1724 Time: 00:00:01:28
+[e0002] Epoch[  6  / 150 ] Iteration[ 190 / 391 ] Loss: 1.3363 Time: 00:00:01:28
+[e0002] Epoch[  6  / 150 ] Iteration[ 200 / 391 ] Loss: 1.2953 Time: 00:00:01:28
+[e0002] Epoch[  6  / 150 ] Iteration[ 210 / 391 ] Loss: 1.2078 Time: 00:00:01:29
+[e0002] Epoch[  6  / 150 ] Iteration[ 220 / 391 ] Loss: 1.2926 Time: 00:00:01:29
+[e0002] Epoch[  6  / 150 ] Iteration[ 230 / 391 ] Loss: 1.1123 Time: 00:00:01:29
+[e0002] Epoch[  6  / 150 ] Iteration[ 240 / 391 ] Loss: 1.3070 Time: 00:00:01:29
+[e0002] Epoch[  6  / 150 ] Iteration[ 250 / 391 ] Loss: 1.2309 Time: 00:00:01:29
+[e0002] Epoch[  6  / 150 ] Iteration[ 260 / 391 ] Loss: 1.3727 Time: 00:00:01:29
+[e0002] Epoch[  6  / 150 ] Iteration[ 270 / 391 ] Loss: 1.2019 Time: 00:00:01:30
+[e0002] Epoch[  6  / 150 ] Iteration[ 280 / 391 ] Loss: 0.9878 Time: 00:00:01:30
+[e0002] Epoch[  6  / 150 ] Iteration[ 290 / 391 ] Loss: 1.1584 Time: 00:00:01:30
+[e0002] Epoch[  6  / 150 ] Iteration[ 300 / 391 ] Loss: 1.3427 Time: 00:00:01:30
+[e0002] Epoch[  6  / 150 ] Iteration[ 310 / 391 ] Loss: 1.2205 Time: 00:00:01:30
+[e0002] Epoch[  6  / 150 ] Iteration[ 320 / 391 ] Loss: 1.1699 Time: 00:00:01:30
+[e0002] Epoch[  6  / 150 ] Iteration[ 330 / 391 ] Loss: 1.2375 Time: 00:00:01:31
+[e0002] Epoch[  6  / 150 ] Iteration[ 340 / 391 ] Loss: 1.0764 Time: 00:00:01:31
+[e0002] Epoch[  6  / 150 ] Iteration[ 350 / 391 ] Loss: 1.1747 Time: 00:00:01:31
+[e0002] Epoch[  6  / 150 ] Iteration[ 360 / 391 ] Loss: 1.2074 Time: 00:00:01:31
+[e0002] Epoch[  6  / 150 ] Iteration[ 370 / 391 ] Loss: 1.2252 Time: 00:00:01:31
+[e0002] Epoch[  6  / 150 ] Iteration[ 380 / 391 ] Loss: 0.9969 Time: 00:00:01:31
+[e0002] Epoch[  6  / 150 ] Iteration[ 390 / 391 ] Loss: 1.2567 Time: 00:00:01:32
+Epoch [  7  ]: Train Avg accuracy: 58.4400; Train Avg loss: 1.1894 
+               Valid Avg accuracy: 59.9800; Valid Avg loss: 1.1398 
+               Time: 00:00:01:39
+               BEST MODEL SAVED
+[e0002] Epoch[  7  / 150 ] Iteration[  0  / 391 ] Loss: 1.0164 Time: 00:00:01:39
+[e0002] Epoch[  7  / 150 ] Iteration[ 10  / 391 ] Loss: 1.0908 Time: 00:00:01:39
+[e0002] Epoch[  7  / 150 ] Iteration[ 20  / 391 ] Loss: 1.0239 Time: 00:00:01:39
+[e0002] Epoch[  7  / 150 ] Iteration[ 30  / 391 ] Loss: 1.1486 Time: 00:00:01:39
+[e0002] Epoch[  7  / 150 ] Iteration[ 40  / 391 ] Loss: 1.4378 Time: 00:00:01:40
+[e0002] Epoch[  7  / 150 ] Iteration[ 50  / 391 ] Loss: 1.1995 Time: 00:00:01:40
+[e0002] Epoch[  7  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1884 Time: 00:00:01:40
+[e0002] Epoch[  7  / 150 ] Iteration[ 70  / 391 ] Loss: 1.1120 Time: 00:00:01:40
+[e0002] Epoch[  7  / 150 ] Iteration[ 80  / 391 ] Loss: 1.1869 Time: 00:00:01:40
+[e0002] Epoch[  7  / 150 ] Iteration[ 90  / 391 ] Loss: 1.0840 Time: 00:00:01:40
+[e0002] Epoch[  7  / 150 ] Iteration[ 100 / 391 ] Loss: 1.3261 Time: 00:00:01:41
+[e0002] Epoch[  7  / 150 ] Iteration[ 110 / 391 ] Loss: 1.2114 Time: 00:00:01:41
+[e0002] Epoch[  7  / 150 ] Iteration[ 120 / 391 ] Loss: 1.2397 Time: 00:00:01:41
+[e0002] Epoch[  7  / 150 ] Iteration[ 130 / 391 ] Loss: 1.1800 Time: 00:00:01:41
+[e0002] Epoch[  7  / 150 ] Iteration[ 140 / 391 ] Loss: 1.2160 Time: 00:00:01:41
+[e0002] Epoch[  7  / 150 ] Iteration[ 150 / 391 ] Loss: 1.0877 Time: 00:00:01:41
+[e0002] Epoch[  7  / 150 ] Iteration[ 160 / 391 ] Loss: 1.0835 Time: 00:00:01:41
+[e0002] Epoch[  7  / 150 ] Iteration[ 170 / 391 ] Loss: 1.1629 Time: 00:00:01:42
+[e0002] Epoch[  7  / 150 ] Iteration[ 180 / 391 ] Loss: 1.2751 Time: 00:00:01:42
+[e0002] Epoch[  7  / 150 ] Iteration[ 190 / 391 ] Loss: 1.1208 Time: 00:00:01:42
+[e0002] Epoch[  7  / 150 ] Iteration[ 200 / 391 ] Loss: 1.2453 Time: 00:00:01:42
+[e0002] Epoch[  7  / 150 ] Iteration[ 210 / 391 ] Loss: 1.2296 Time: 00:00:01:42
+[e0002] Epoch[  7  / 150 ] Iteration[ 220 / 391 ] Loss: 1.1785 Time: 00:00:01:42
+[e0002] Epoch[  7  / 150 ] Iteration[ 230 / 391 ] Loss: 1.2331 Time: 00:00:01:43
+[e0002] Epoch[  7  / 150 ] Iteration[ 240 / 391 ] Loss: 1.1955 Time: 00:00:01:43
+[e0002] Epoch[  7  / 150 ] Iteration[ 250 / 391 ] Loss: 1.2070 Time: 00:00:01:43
+[e0002] Epoch[  7  / 150 ] Iteration[ 260 / 391 ] Loss: 1.0926 Time: 00:00:01:43
+[e0002] Epoch[  7  / 150 ] Iteration[ 270 / 391 ] Loss: 1.4126 Time: 00:00:01:43
+[e0002] Epoch[  7  / 150 ] Iteration[ 280 / 391 ] Loss: 1.3370 Time: 00:00:01:43
+[e0002] Epoch[  7  / 150 ] Iteration[ 290 / 391 ] Loss: 1.2007 Time: 00:00:01:44
+[e0002] Epoch[  7  / 150 ] Iteration[ 300 / 391 ] Loss: 1.1738 Time: 00:00:01:44
+[e0002] Epoch[  7  / 150 ] Iteration[ 310 / 391 ] Loss: 1.1670 Time: 00:00:01:44
+[e0002] Epoch[  7  / 150 ] Iteration[ 320 / 391 ] Loss: 1.1178 Time: 00:00:01:44
+[e0002] Epoch[  7  / 150 ] Iteration[ 330 / 391 ] Loss: 1.0076 Time: 00:00:01:44
+[e0002] Epoch[  7  / 150 ] Iteration[ 340 / 391 ] Loss: 1.2231 Time: 00:00:01:44
+[e0002] Epoch[  7  / 150 ] Iteration[ 350 / 391 ] Loss: 1.1187 Time: 00:00:01:45
+[e0002] Epoch[  7  / 150 ] Iteration[ 360 / 391 ] Loss: 1.2704 Time: 00:00:01:45
+[e0002] Epoch[  7  / 150 ] Iteration[ 370 / 391 ] Loss: 1.1590 Time: 00:00:01:45
+[e0002] Epoch[  7  / 150 ] Iteration[ 380 / 391 ] Loss: 1.1539 Time: 00:00:01:45
+[e0002] Epoch[  7  / 150 ] Iteration[ 390 / 391 ] Loss: 1.0427 Time: 00:00:01:45
+Epoch [  8  ]: Train Avg accuracy: 59.7000; Train Avg loss: 1.1481 
+               Valid Avg accuracy: 60.7900; Valid Avg loss: 1.0956 
+               Time: 00:00:01:52
+               BEST MODEL SAVED
+[e0002] Epoch[  8  / 150 ] Iteration[  0  / 391 ] Loss: 1.1821 Time: 00:00:01:52
+[e0002] Epoch[  8  / 150 ] Iteration[ 10  / 391 ] Loss: 0.9993 Time: 00:00:01:53
+[e0002] Epoch[  8  / 150 ] Iteration[ 20  / 391 ] Loss: 1.0885 Time: 00:00:01:53
+[e0002] Epoch[  8  / 150 ] Iteration[ 30  / 391 ] Loss: 0.9006 Time: 00:00:01:53
+[e0002] Epoch[  8  / 150 ] Iteration[ 40  / 391 ] Loss: 0.9380 Time: 00:00:01:53
+[e0002] Epoch[  8  / 150 ] Iteration[ 50  / 391 ] Loss: 1.1494 Time: 00:00:01:53
+[e0002] Epoch[  8  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1615 Time: 00:00:01:53
+[e0002] Epoch[  8  / 150 ] Iteration[ 70  / 391 ] Loss: 1.2297 Time: 00:00:01:54
+[e0002] Epoch[  8  / 150 ] Iteration[ 80  / 391 ] Loss: 1.2456 Time: 00:00:01:54
+[e0002] Epoch[  8  / 150 ] Iteration[ 90  / 391 ] Loss: 1.3936 Time: 00:00:01:54
+[e0002] Epoch[  8  / 150 ] Iteration[ 100 / 391 ] Loss: 1.0225 Time: 00:00:01:54
+[e0002] Epoch[  8  / 150 ] Iteration[ 110 / 391 ] Loss: 1.1524 Time: 00:00:01:54
+[e0002] Epoch[  8  / 150 ] Iteration[ 120 / 391 ] Loss: 1.0796 Time: 00:00:01:54
+[e0002] Epoch[  8  / 150 ] Iteration[ 130 / 391 ] Loss: 1.2473 Time: 00:00:01:55
+[e0002] Epoch[  8  / 150 ] Iteration[ 140 / 391 ] Loss: 1.4808 Time: 00:00:01:55
+[e0002] Epoch[  8  / 150 ] Iteration[ 150 / 391 ] Loss: 1.2661 Time: 00:00:01:55
+[e0002] Epoch[  8  / 150 ] Iteration[ 160 / 391 ] Loss: 1.2378 Time: 00:00:01:55
+[e0002] Epoch[  8  / 150 ] Iteration[ 170 / 391 ] Loss: 1.1027 Time: 00:00:01:55
+[e0002] Epoch[  8  / 150 ] Iteration[ 180 / 391 ] Loss: 1.2287 Time: 00:00:01:55
+[e0002] Epoch[  8  / 150 ] Iteration[ 190 / 391 ] Loss: 1.3495 Time: 00:00:01:56
+[e0002] Epoch[  8  / 150 ] Iteration[ 200 / 391 ] Loss: 1.3315 Time: 00:00:01:56
+[e0002] Epoch[  8  / 150 ] Iteration[ 210 / 391 ] Loss: 0.9356 Time: 00:00:01:56
+[e0002] Epoch[  8  / 150 ] Iteration[ 220 / 391 ] Loss: 1.2846 Time: 00:00:01:56
+[e0002] Epoch[  8  / 150 ] Iteration[ 230 / 391 ] Loss: 1.0808 Time: 00:00:01:56
+[e0002] Epoch[  8  / 150 ] Iteration[ 240 / 391 ] Loss: 1.0689 Time: 00:00:01:56
+[e0002] Epoch[  8  / 150 ] Iteration[ 250 / 391 ] Loss: 1.1009 Time: 00:00:01:57
+[e0002] Epoch[  8  / 150 ] Iteration[ 260 / 391 ] Loss: 1.2913 Time: 00:00:01:57
+[e0002] Epoch[  8  / 150 ] Iteration[ 270 / 391 ] Loss: 1.1842 Time: 00:00:01:57
+[e0002] Epoch[  8  / 150 ] Iteration[ 280 / 391 ] Loss: 1.2507 Time: 00:00:01:57
+[e0002] Epoch[  8  / 150 ] Iteration[ 290 / 391 ] Loss: 1.1374 Time: 00:00:01:57
+[e0002] Epoch[  8  / 150 ] Iteration[ 300 / 391 ] Loss: 1.2966 Time: 00:00:01:57
+[e0002] Epoch[  8  / 150 ] Iteration[ 310 / 391 ] Loss: 1.2571 Time: 00:00:01:58
+[e0002] Epoch[  8  / 150 ] Iteration[ 320 / 391 ] Loss: 1.3268 Time: 00:00:01:58
+[e0002] Epoch[  8  / 150 ] Iteration[ 330 / 391 ] Loss: 1.0509 Time: 00:00:01:58
+[e0002] Epoch[  8  / 150 ] Iteration[ 340 / 391 ] Loss: 1.1871 Time: 00:00:01:58
+[e0002] Epoch[  8  / 150 ] Iteration[ 350 / 391 ] Loss: 1.3926 Time: 00:00:01:58
+[e0002] Epoch[  8  / 150 ] Iteration[ 360 / 391 ] Loss: 1.1035 Time: 00:00:01:59
+[e0002] Epoch[  8  / 150 ] Iteration[ 370 / 391 ] Loss: 1.0198 Time: 00:00:01:59
+[e0002] Epoch[  8  / 150 ] Iteration[ 380 / 391 ] Loss: 1.2997 Time: 00:00:01:59
+[e0002] Epoch[  8  / 150 ] Iteration[ 390 / 391 ] Loss: 1.1853 Time: 00:00:01:59
+Epoch [  9  ]: Train Avg accuracy: 61.3620; Train Avg loss: 1.1024 
+               Valid Avg accuracy: 63.7500; Valid Avg loss: 1.0377 
+               Time: 00:00:02:06
+               BEST MODEL SAVED
+[e0002] Epoch[  9  / 150 ] Iteration[  0  / 391 ] Loss: 1.0035 Time: 00:00:02:07
+[e0002] Epoch[  9  / 150 ] Iteration[ 10  / 391 ] Loss: 1.1051 Time: 00:00:02:07
+[e0002] Epoch[  9  / 150 ] Iteration[ 20  / 391 ] Loss: 1.1356 Time: 00:00:02:07
+[e0002] Epoch[  9  / 150 ] Iteration[ 30  / 391 ] Loss: 1.0936 Time: 00:00:02:07
+[e0002] Epoch[  9  / 150 ] Iteration[ 40  / 391 ] Loss: 1.0002 Time: 00:00:02:07
+[e0002] Epoch[  9  / 150 ] Iteration[ 50  / 391 ] Loss: 1.2475 Time: 00:00:02:07
+[e0002] Epoch[  9  / 150 ] Iteration[ 60  / 391 ] Loss: 1.2152 Time: 00:00:02:08
+[e0002] Epoch[  9  / 150 ] Iteration[ 70  / 391 ] Loss: 1.1632 Time: 00:00:02:08
+[e0002] Epoch[  9  / 150 ] Iteration[ 80  / 391 ] Loss: 1.1558 Time: 00:00:02:08
+[e0002] Epoch[  9  / 150 ] Iteration[ 90  / 391 ] Loss: 1.3154 Time: 00:00:02:08
+[e0002] Epoch[  9  / 150 ] Iteration[ 100 / 391 ] Loss: 1.0812 Time: 00:00:02:08
+[e0002] Epoch[  9  / 150 ] Iteration[ 110 / 391 ] Loss: 1.0580 Time: 00:00:02:08
+[e0002] Epoch[  9  / 150 ] Iteration[ 120 / 391 ] Loss: 1.1314 Time: 00:00:02:09
+[e0002] Epoch[  9  / 150 ] Iteration[ 130 / 391 ] Loss: 1.1452 Time: 00:00:02:09
+[e0002] Epoch[  9  / 150 ] Iteration[ 140 / 391 ] Loss: 1.0742 Time: 00:00:02:09
+[e0002] Epoch[  9  / 150 ] Iteration[ 150 / 391 ] Loss: 1.0838 Time: 00:00:02:09
+[e0002] Epoch[  9  / 150 ] Iteration[ 160 / 391 ] Loss: 1.1431 Time: 00:00:02:09
+[e0002] Epoch[  9  / 150 ] Iteration[ 170 / 391 ] Loss: 1.0726 Time: 00:00:02:09
+[e0002] Epoch[  9  / 150 ] Iteration[ 180 / 391 ] Loss: 0.8517 Time: 00:00:02:10
+[e0002] Epoch[  9  / 150 ] Iteration[ 190 / 391 ] Loss: 1.2341 Time: 00:00:02:10
+[e0002] Epoch[  9  / 150 ] Iteration[ 200 / 391 ] Loss: 1.2132 Time: 00:00:02:10
+[e0002] Epoch[  9  / 150 ] Iteration[ 210 / 391 ] Loss: 1.1777 Time: 00:00:02:10
+[e0002] Epoch[  9  / 150 ] Iteration[ 220 / 391 ] Loss: 0.7976 Time: 00:00:02:10
+[e0002] Epoch[  9  / 150 ] Iteration[ 230 / 391 ] Loss: 1.2020 Time: 00:00:02:10
+[e0002] Epoch[  9  / 150 ] Iteration[ 240 / 391 ] Loss: 1.1722 Time: 00:00:02:11
+[e0002] Epoch[  9  / 150 ] Iteration[ 250 / 391 ] Loss: 1.1114 Time: 00:00:02:11
+[e0002] Epoch[  9  / 150 ] Iteration[ 260 / 391 ] Loss: 1.2371 Time: 00:00:02:11
+[e0002] Epoch[  9  / 150 ] Iteration[ 270 / 391 ] Loss: 1.1072 Time: 00:00:02:11
+[e0002] Epoch[  9  / 150 ] Iteration[ 280 / 391 ] Loss: 1.1959 Time: 00:00:02:11
+[e0002] Epoch[  9  / 150 ] Iteration[ 290 / 391 ] Loss: 1.2413 Time: 00:00:02:11
+[e0002] Epoch[  9  / 150 ] Iteration[ 300 / 391 ] Loss: 1.0161 Time: 00:00:02:12
+[e0002] Epoch[  9  / 150 ] Iteration[ 310 / 391 ] Loss: 1.0086 Time: 00:00:02:12
+[e0002] Epoch[  9  / 150 ] Iteration[ 320 / 391 ] Loss: 1.1604 Time: 00:00:02:12
+[e0002] Epoch[  9  / 150 ] Iteration[ 330 / 391 ] Loss: 1.1751 Time: 00:00:02:12
+[e0002] Epoch[  9  / 150 ] Iteration[ 340 / 391 ] Loss: 1.2874 Time: 00:00:02:12
+[e0002] Epoch[  9  / 150 ] Iteration[ 350 / 391 ] Loss: 1.0386 Time: 00:00:02:12
+[e0002] Epoch[  9  / 150 ] Iteration[ 360 / 391 ] Loss: 1.2031 Time: 00:00:02:13
+[e0002] Epoch[  9  / 150 ] Iteration[ 370 / 391 ] Loss: 1.0740 Time: 00:00:02:13
+[e0002] Epoch[  9  / 150 ] Iteration[ 380 / 391 ] Loss: 1.0420 Time: 00:00:02:13
+[e0002] Epoch[  9  / 150 ] Iteration[ 390 / 391 ] Loss: 0.9847 Time: 00:00:02:13
+Epoch [ 10  ]: Train Avg accuracy: 60.9220; Train Avg loss: 1.1219 
+               Valid Avg accuracy: 62.8200; Valid Avg loss: 1.0771 
+               Time: 00:00:02:20
+[e0002] Epoch[ 10  / 150 ] Iteration[  0  / 391 ] Loss: 0.9818 Time: 00:00:02:20
+[e0002] Epoch[ 10  / 150 ] Iteration[ 10  / 391 ] Loss: 0.8897 Time: 00:00:02:21
+[e0002] Epoch[ 10  / 150 ] Iteration[ 20  / 391 ] Loss: 1.0142 Time: 00:00:02:21
+[e0002] Epoch[ 10  / 150 ] Iteration[ 30  / 391 ] Loss: 1.2691 Time: 00:00:02:21
+[e0002] Epoch[ 10  / 150 ] Iteration[ 40  / 391 ] Loss: 0.9988 Time: 00:00:02:21
+[e0002] Epoch[ 10  / 150 ] Iteration[ 50  / 391 ] Loss: 1.1998 Time: 00:00:02:21
+[e0002] Epoch[ 10  / 150 ] Iteration[ 60  / 391 ] Loss: 0.8392 Time: 00:00:02:21
+[e0002] Epoch[ 10  / 150 ] Iteration[ 70  / 391 ] Loss: 1.0692 Time: 00:00:02:22
+[e0002] Epoch[ 10  / 150 ] Iteration[ 80  / 391 ] Loss: 0.9294 Time: 00:00:02:22
+[e0002] Epoch[ 10  / 150 ] Iteration[ 90  / 391 ] Loss: 1.0171 Time: 00:00:02:22
+[e0002] Epoch[ 10  / 150 ] Iteration[ 100 / 391 ] Loss: 1.1615 Time: 00:00:02:22
+[e0002] Epoch[ 10  / 150 ] Iteration[ 110 / 391 ] Loss: 1.0867 Time: 00:00:02:22
+[e0002] Epoch[ 10  / 150 ] Iteration[ 120 / 391 ] Loss: 1.2378 Time: 00:00:02:22
+[e0002] Epoch[ 10  / 150 ] Iteration[ 130 / 391 ] Loss: 1.3180 Time: 00:00:02:23
+[e0002] Epoch[ 10  / 150 ] Iteration[ 140 / 391 ] Loss: 1.1943 Time: 00:00:02:23
+[e0002] Epoch[ 10  / 150 ] Iteration[ 150 / 391 ] Loss: 0.9746 Time: 00:00:02:23
+[e0002] Epoch[ 10  / 150 ] Iteration[ 160 / 391 ] Loss: 1.0878 Time: 00:00:02:23
+[e0002] Epoch[ 10  / 150 ] Iteration[ 170 / 391 ] Loss: 0.9327 Time: 00:00:02:23
+[e0002] Epoch[ 10  / 150 ] Iteration[ 180 / 391 ] Loss: 1.1399 Time: 00:00:02:23
+[e0002] Epoch[ 10  / 150 ] Iteration[ 190 / 391 ] Loss: 1.1902 Time: 00:00:02:24
+[e0002] Epoch[ 10  / 150 ] Iteration[ 200 / 391 ] Loss: 1.0086 Time: 00:00:02:24
+[e0002] Epoch[ 10  / 150 ] Iteration[ 210 / 391 ] Loss: 1.1677 Time: 00:00:02:24
+[e0002] Epoch[ 10  / 150 ] Iteration[ 220 / 391 ] Loss: 1.1782 Time: 00:00:02:24
+[e0002] Epoch[ 10  / 150 ] Iteration[ 230 / 391 ] Loss: 1.1486 Time: 00:00:02:24
+[e0002] Epoch[ 10  / 150 ] Iteration[ 240 / 391 ] Loss: 1.2115 Time: 00:00:02:24
+[e0002] Epoch[ 10  / 150 ] Iteration[ 250 / 391 ] Loss: 1.1883 Time: 00:00:02:25
+[e0002] Epoch[ 10  / 150 ] Iteration[ 260 / 391 ] Loss: 0.9977 Time: 00:00:02:25
+[e0002] Epoch[ 10  / 150 ] Iteration[ 270 / 391 ] Loss: 1.2036 Time: 00:00:02:25
+[e0002] Epoch[ 10  / 150 ] Iteration[ 280 / 391 ] Loss: 1.0781 Time: 00:00:02:25
+[e0002] Epoch[ 10  / 150 ] Iteration[ 290 / 391 ] Loss: 1.0694 Time: 00:00:02:25
+[e0002] Epoch[ 10  / 150 ] Iteration[ 300 / 391 ] Loss: 1.0707 Time: 00:00:02:25
+[e0002] Epoch[ 10  / 150 ] Iteration[ 310 / 391 ] Loss: 1.0623 Time: 00:00:02:25
+[e0002] Epoch[ 10  / 150 ] Iteration[ 320 / 391 ] Loss: 1.0051 Time: 00:00:02:26
+[e0002] Epoch[ 10  / 150 ] Iteration[ 330 / 391 ] Loss: 1.1702 Time: 00:00:02:26
+[e0002] Epoch[ 10  / 150 ] Iteration[ 340 / 391 ] Loss: 1.0902 Time: 00:00:02:26
+[e0002] Epoch[ 10  / 150 ] Iteration[ 350 / 391 ] Loss: 1.2991 Time: 00:00:02:26
+[e0002] Epoch[ 10  / 150 ] Iteration[ 360 / 391 ] Loss: 1.2918 Time: 00:00:02:26
+[e0002] Epoch[ 10  / 150 ] Iteration[ 370 / 391 ] Loss: 1.0931 Time: 00:00:02:26
+[e0002] Epoch[ 10  / 150 ] Iteration[ 380 / 391 ] Loss: 0.9442 Time: 00:00:02:27
+[e0002] Epoch[ 10  / 150 ] Iteration[ 390 / 391 ] Loss: 1.1883 Time: 00:00:02:27
+Epoch [ 11  ]: Train Avg accuracy: 61.8280; Train Avg loss: 1.0955 
+               Valid Avg accuracy: 64.3700; Valid Avg loss: 1.0348 
+               Time: 00:00:02:34
+               BEST MODEL SAVED
+[e0002] Epoch[ 11  / 150 ] Iteration[  0  / 391 ] Loss: 1.0284 Time: 00:00:02:34
+[e0002] Epoch[ 11  / 150 ] Iteration[ 10  / 391 ] Loss: 1.0082 Time: 00:00:02:34
+[e0002] Epoch[ 11  / 150 ] Iteration[ 20  / 391 ] Loss: 1.1194 Time: 00:00:02:34
+[e0002] Epoch[ 11  / 150 ] Iteration[ 30  / 391 ] Loss: 1.0634 Time: 00:00:02:35
+[e0002] Epoch[ 11  / 150 ] Iteration[ 40  / 391 ] Loss: 1.0978 Time: 00:00:02:35
+[e0002] Epoch[ 11  / 150 ] Iteration[ 50  / 391 ] Loss: 0.8888 Time: 00:00:02:35
+[e0002] Epoch[ 11  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1383 Time: 00:00:02:35
+[e0002] Epoch[ 11  / 150 ] Iteration[ 70  / 391 ] Loss: 1.1385 Time: 00:00:02:35
+[e0002] Epoch[ 11  / 150 ] Iteration[ 80  / 391 ] Loss: 1.2653 Time: 00:00:02:35
+[e0002] Epoch[ 11  / 150 ] Iteration[ 90  / 391 ] Loss: 0.9024 Time: 00:00:02:36
+[e0002] Epoch[ 11  / 150 ] Iteration[ 100 / 391 ] Loss: 1.0376 Time: 00:00:02:36
+[e0002] Epoch[ 11  / 150 ] Iteration[ 110 / 391 ] Loss: 1.1392 Time: 00:00:02:36
+[e0002] Epoch[ 11  / 150 ] Iteration[ 120 / 391 ] Loss: 0.9698 Time: 00:00:02:36
+[e0002] Epoch[ 11  / 150 ] Iteration[ 130 / 391 ] Loss: 1.1321 Time: 00:00:02:36
+[e0002] Epoch[ 11  / 150 ] Iteration[ 140 / 391 ] Loss: 1.1301 Time: 00:00:02:36
+[e0002] Epoch[ 11  / 150 ] Iteration[ 150 / 391 ] Loss: 0.9301 Time: 00:00:02:37
+[e0002] Epoch[ 11  / 150 ] Iteration[ 160 / 391 ] Loss: 1.4054 Time: 00:00:02:37
+[e0002] Epoch[ 11  / 150 ] Iteration[ 170 / 391 ] Loss: 0.9541 Time: 00:00:02:37
+[e0002] Epoch[ 11  / 150 ] Iteration[ 180 / 391 ] Loss: 1.0449 Time: 00:00:02:37
+[e0002] Epoch[ 11  / 150 ] Iteration[ 190 / 391 ] Loss: 1.1882 Time: 00:00:02:37
+[e0002] Epoch[ 11  / 150 ] Iteration[ 200 / 391 ] Loss: 1.0701 Time: 00:00:02:37
+[e0002] Epoch[ 11  / 150 ] Iteration[ 210 / 391 ] Loss: 1.1520 Time: 00:00:02:37
+[e0002] Epoch[ 11  / 150 ] Iteration[ 220 / 391 ] Loss: 1.2239 Time: 00:00:02:38
+[e0002] Epoch[ 11  / 150 ] Iteration[ 230 / 391 ] Loss: 1.0926 Time: 00:00:02:38
+[e0002] Epoch[ 11  / 150 ] Iteration[ 240 / 391 ] Loss: 1.0941 Time: 00:00:02:38
+[e0002] Epoch[ 11  / 150 ] Iteration[ 250 / 391 ] Loss: 1.0738 Time: 00:00:02:38
+[e0002] Epoch[ 11  / 150 ] Iteration[ 260 / 391 ] Loss: 1.3307 Time: 00:00:02:38
+[e0002] Epoch[ 11  / 150 ] Iteration[ 270 / 391 ] Loss: 1.0455 Time: 00:00:02:38
+[e0002] Epoch[ 11  / 150 ] Iteration[ 280 / 391 ] Loss: 1.1993 Time: 00:00:02:39
+[e0002] Epoch[ 11  / 150 ] Iteration[ 290 / 391 ] Loss: 1.1110 Time: 00:00:02:39
+[e0002] Epoch[ 11  / 150 ] Iteration[ 300 / 391 ] Loss: 1.1261 Time: 00:00:02:39
+[e0002] Epoch[ 11  / 150 ] Iteration[ 310 / 391 ] Loss: 1.2198 Time: 00:00:02:39
+[e0002] Epoch[ 11  / 150 ] Iteration[ 320 / 391 ] Loss: 1.0729 Time: 00:00:02:39
+[e0002] Epoch[ 11  / 150 ] Iteration[ 330 / 391 ] Loss: 0.9621 Time: 00:00:02:39
+[e0002] Epoch[ 11  / 150 ] Iteration[ 340 / 391 ] Loss: 0.9242 Time: 00:00:02:40
+[e0002] Epoch[ 11  / 150 ] Iteration[ 350 / 391 ] Loss: 1.0728 Time: 00:00:02:40
+[e0002] Epoch[ 11  / 150 ] Iteration[ 360 / 391 ] Loss: 1.2366 Time: 00:00:02:40
+[e0002] Epoch[ 11  / 150 ] Iteration[ 370 / 391 ] Loss: 1.0738 Time: 00:00:02:40
+[e0002] Epoch[ 11  / 150 ] Iteration[ 380 / 391 ] Loss: 1.0731 Time: 00:00:02:40
+[e0002] Epoch[ 11  / 150 ] Iteration[ 390 / 391 ] Loss: 1.0831 Time: 00:00:02:40
+Epoch [ 12  ]: Train Avg accuracy: 61.1380; Train Avg loss: 1.1158 
+               Valid Avg accuracy: 62.8200; Valid Avg loss: 1.0803 
+               Time: 00:00:02:48
+[e0002] Epoch[ 12  / 150 ] Iteration[  0  / 391 ] Loss: 1.1787 Time: 00:00:02:48
+[e0002] Epoch[ 12  / 150 ] Iteration[ 10  / 391 ] Loss: 1.0528 Time: 00:00:02:48
+[e0002] Epoch[ 12  / 150 ] Iteration[ 20  / 391 ] Loss: 1.0181 Time: 00:00:02:48
+[e0002] Epoch[ 12  / 150 ] Iteration[ 30  / 391 ] Loss: 0.9138 Time: 00:00:02:48
+[e0002] Epoch[ 12  / 150 ] Iteration[ 40  / 391 ] Loss: 1.1019 Time: 00:00:02:48
+[e0002] Epoch[ 12  / 150 ] Iteration[ 50  / 391 ] Loss: 0.9529 Time: 00:00:02:48
+[e0002] Epoch[ 12  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1542 Time: 00:00:02:49
+[e0002] Epoch[ 12  / 150 ] Iteration[ 70  / 391 ] Loss: 1.1321 Time: 00:00:02:49
+[e0002] Epoch[ 12  / 150 ] Iteration[ 80  / 391 ] Loss: 1.1395 Time: 00:00:02:49
+[e0002] Epoch[ 12  / 150 ] Iteration[ 90  / 391 ] Loss: 1.1254 Time: 00:00:02:49
+[e0002] Epoch[ 12  / 150 ] Iteration[ 100 / 391 ] Loss: 1.1927 Time: 00:00:02:49
+[e0002] Epoch[ 12  / 150 ] Iteration[ 110 / 391 ] Loss: 1.1713 Time: 00:00:02:50
+[e0002] Epoch[ 12  / 150 ] Iteration[ 120 / 391 ] Loss: 1.0413 Time: 00:00:02:50
+[e0002] Epoch[ 12  / 150 ] Iteration[ 130 / 391 ] Loss: 1.0548 Time: 00:00:02:50
+[e0002] Epoch[ 12  / 150 ] Iteration[ 140 / 391 ] Loss: 1.1586 Time: 00:00:02:50
+[e0002] Epoch[ 12  / 150 ] Iteration[ 150 / 391 ] Loss: 1.0341 Time: 00:00:02:50
+[e0002] Epoch[ 12  / 150 ] Iteration[ 160 / 391 ] Loss: 1.1337 Time: 00:00:02:50
+[e0002] Epoch[ 12  / 150 ] Iteration[ 170 / 391 ] Loss: 1.0419 Time: 00:00:02:50
+[e0002] Epoch[ 12  / 150 ] Iteration[ 180 / 391 ] Loss: 1.0267 Time: 00:00:02:51
+[e0002] Epoch[ 12  / 150 ] Iteration[ 190 / 391 ] Loss: 1.0027 Time: 00:00:02:51
+[e0002] Epoch[ 12  / 150 ] Iteration[ 200 / 391 ] Loss: 1.1833 Time: 00:00:02:51
+[e0002] Epoch[ 12  / 150 ] Iteration[ 210 / 391 ] Loss: 0.9943 Time: 00:00:02:51
+[e0002] Epoch[ 12  / 150 ] Iteration[ 220 / 391 ] Loss: 1.2365 Time: 00:00:02:51
+[e0002] Epoch[ 12  / 150 ] Iteration[ 230 / 391 ] Loss: 1.1239 Time: 00:00:02:51
+[e0002] Epoch[ 12  / 150 ] Iteration[ 240 / 391 ] Loss: 1.0813 Time: 00:00:02:52
+[e0002] Epoch[ 12  / 150 ] Iteration[ 250 / 391 ] Loss: 1.2582 Time: 00:00:02:52
+[e0002] Epoch[ 12  / 150 ] Iteration[ 260 / 391 ] Loss: 1.1647 Time: 00:00:02:52
+[e0002] Epoch[ 12  / 150 ] Iteration[ 270 / 391 ] Loss: 1.0428 Time: 00:00:02:52
+[e0002] Epoch[ 12  / 150 ] Iteration[ 280 / 391 ] Loss: 0.9651 Time: 00:00:02:52
+[e0002] Epoch[ 12  / 150 ] Iteration[ 290 / 391 ] Loss: 0.8720 Time: 00:00:02:52
+[e0002] Epoch[ 12  / 150 ] Iteration[ 300 / 391 ] Loss: 0.9851 Time: 00:00:02:53
+[e0002] Epoch[ 12  / 150 ] Iteration[ 310 / 391 ] Loss: 1.1679 Time: 00:00:02:53
+[e0002] Epoch[ 12  / 150 ] Iteration[ 320 / 391 ] Loss: 1.0173 Time: 00:00:02:53
+[e0002] Epoch[ 12  / 150 ] Iteration[ 330 / 391 ] Loss: 0.9606 Time: 00:00:02:53
+[e0002] Epoch[ 12  / 150 ] Iteration[ 340 / 391 ] Loss: 1.0835 Time: 00:00:02:53
+[e0002] Epoch[ 12  / 150 ] Iteration[ 350 / 391 ] Loss: 1.0482 Time: 00:00:02:53
+[e0002] Epoch[ 12  / 150 ] Iteration[ 360 / 391 ] Loss: 1.0060 Time: 00:00:02:54
+[e0002] Epoch[ 12  / 150 ] Iteration[ 370 / 391 ] Loss: 1.1203 Time: 00:00:02:54
+[e0002] Epoch[ 12  / 150 ] Iteration[ 380 / 391 ] Loss: 1.0930 Time: 00:00:02:54
+[e0002] Epoch[ 12  / 150 ] Iteration[ 390 / 391 ] Loss: 0.8063 Time: 00:00:02:54
+Epoch [ 13  ]: Train Avg accuracy: 62.7640; Train Avg loss: 1.0640 
+               Valid Avg accuracy: 63.9300; Valid Avg loss: 1.0390 
+               Time: 00:00:03:01
+[e0002] Epoch[ 13  / 150 ] Iteration[  0  / 391 ] Loss: 1.0096 Time: 00:00:03:01
+[e0002] Epoch[ 13  / 150 ] Iteration[ 10  / 391 ] Loss: 1.0942 Time: 00:00:03:01
+[e0002] Epoch[ 13  / 150 ] Iteration[ 20  / 391 ] Loss: 1.1392 Time: 00:00:03:02
+[e0002] Epoch[ 13  / 150 ] Iteration[ 30  / 391 ] Loss: 0.8909 Time: 00:00:03:02
+[e0002] Epoch[ 13  / 150 ] Iteration[ 40  / 391 ] Loss: 0.8601 Time: 00:00:03:02
+[e0002] Epoch[ 13  / 150 ] Iteration[ 50  / 391 ] Loss: 1.1457 Time: 00:00:03:02
+[e0002] Epoch[ 13  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1270 Time: 00:00:03:02
+[e0002] Epoch[ 13  / 150 ] Iteration[ 70  / 391 ] Loss: 1.0496 Time: 00:00:03:02
+[e0002] Epoch[ 13  / 150 ] Iteration[ 80  / 391 ] Loss: 1.0343 Time: 00:00:03:03
+[e0002] Epoch[ 13  / 150 ] Iteration[ 90  / 391 ] Loss: 0.9616 Time: 00:00:03:03
+[e0002] Epoch[ 13  / 150 ] Iteration[ 100 / 391 ] Loss: 1.0824 Time: 00:00:03:03
+[e0002] Epoch[ 13  / 150 ] Iteration[ 110 / 391 ] Loss: 1.1640 Time: 00:00:03:03
+[e0002] Epoch[ 13  / 150 ] Iteration[ 120 / 391 ] Loss: 1.0000 Time: 00:00:03:03
+[e0002] Epoch[ 13  / 150 ] Iteration[ 130 / 391 ] Loss: 1.0086 Time: 00:00:03:03
+[e0002] Epoch[ 13  / 150 ] Iteration[ 140 / 391 ] Loss: 0.9747 Time: 00:00:03:03
+[e0002] Epoch[ 13  / 150 ] Iteration[ 150 / 391 ] Loss: 0.9576 Time: 00:00:03:04
+[e0002] Epoch[ 13  / 150 ] Iteration[ 160 / 391 ] Loss: 0.9140 Time: 00:00:03:04
+[e0002] Epoch[ 13  / 150 ] Iteration[ 170 / 391 ] Loss: 1.2979 Time: 00:00:03:04
+[e0002] Epoch[ 13  / 150 ] Iteration[ 180 / 391 ] Loss: 0.9654 Time: 00:00:03:04
+[e0002] Epoch[ 13  / 150 ] Iteration[ 190 / 391 ] Loss: 1.0992 Time: 00:00:03:04
+[e0002] Epoch[ 13  / 150 ] Iteration[ 200 / 391 ] Loss: 1.0957 Time: 00:00:03:04
+[e0002] Epoch[ 13  / 150 ] Iteration[ 210 / 391 ] Loss: 1.0771 Time: 00:00:03:05
+[e0002] Epoch[ 13  / 150 ] Iteration[ 220 / 391 ] Loss: 1.0451 Time: 00:00:03:05
+[e0002] Epoch[ 13  / 150 ] Iteration[ 230 / 391 ] Loss: 1.2564 Time: 00:00:03:05
+[e0002] Epoch[ 13  / 150 ] Iteration[ 240 / 391 ] Loss: 1.1676 Time: 00:00:03:05
+[e0002] Epoch[ 13  / 150 ] Iteration[ 250 / 391 ] Loss: 1.1089 Time: 00:00:03:05
+[e0002] Epoch[ 13  / 150 ] Iteration[ 260 / 391 ] Loss: 1.0999 Time: 00:00:03:05
+[e0002] Epoch[ 13  / 150 ] Iteration[ 270 / 391 ] Loss: 1.1266 Time: 00:00:03:06
+[e0002] Epoch[ 13  / 150 ] Iteration[ 280 / 391 ] Loss: 1.2177 Time: 00:00:03:06
+[e0002] Epoch[ 13  / 150 ] Iteration[ 290 / 391 ] Loss: 1.0159 Time: 00:00:03:06
+[e0002] Epoch[ 13  / 150 ] Iteration[ 300 / 391 ] Loss: 1.0260 Time: 00:00:03:06
+[e0002] Epoch[ 13  / 150 ] Iteration[ 310 / 391 ] Loss: 0.9993 Time: 00:00:03:06
+[e0002] Epoch[ 13  / 150 ] Iteration[ 320 / 391 ] Loss: 1.0399 Time: 00:00:03:06
+[e0002] Epoch[ 13  / 150 ] Iteration[ 330 / 391 ] Loss: 1.1613 Time: 00:00:03:07
+[e0002] Epoch[ 13  / 150 ] Iteration[ 340 / 391 ] Loss: 1.0083 Time: 00:00:03:07
+[e0002] Epoch[ 13  / 150 ] Iteration[ 350 / 391 ] Loss: 1.1946 Time: 00:00:03:07
+[e0002] Epoch[ 13  / 150 ] Iteration[ 360 / 391 ] Loss: 1.0738 Time: 00:00:03:07
+[e0002] Epoch[ 13  / 150 ] Iteration[ 370 / 391 ] Loss: 0.9279 Time: 00:00:03:07
+[e0002] Epoch[ 13  / 150 ] Iteration[ 380 / 391 ] Loss: 1.0048 Time: 00:00:03:07
+[e0002] Epoch[ 13  / 150 ] Iteration[ 390 / 391 ] Loss: 1.0884 Time: 00:00:03:08
+Epoch [ 14  ]: Train Avg accuracy: 64.2260; Train Avg loss: 1.0183 
+               Valid Avg accuracy: 65.6600; Valid Avg loss: 0.9935 
+               Time: 00:00:03:15
+               BEST MODEL SAVED
+[e0002] Epoch[ 14  / 150 ] Iteration[  0  / 391 ] Loss: 0.9533 Time: 00:00:03:15
+[e0002] Epoch[ 14  / 150 ] Iteration[ 10  / 391 ] Loss: 1.0967 Time: 00:00:03:15
+[e0002] Epoch[ 14  / 150 ] Iteration[ 20  / 391 ] Loss: 1.0802 Time: 00:00:03:15
+[e0002] Epoch[ 14  / 150 ] Iteration[ 30  / 391 ] Loss: 0.9871 Time: 00:00:03:15
+[e0002] Epoch[ 14  / 150 ] Iteration[ 40  / 391 ] Loss: 0.8295 Time: 00:00:03:15
+[e0002] Epoch[ 14  / 150 ] Iteration[ 50  / 391 ] Loss: 1.0690 Time: 00:00:03:16
+[e0002] Epoch[ 14  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1171 Time: 00:00:03:16
+[e0002] Epoch[ 14  / 150 ] Iteration[ 70  / 391 ] Loss: 1.3035 Time: 00:00:03:16
+[e0002] Epoch[ 14  / 150 ] Iteration[ 80  / 391 ] Loss: 0.9750 Time: 00:00:03:16
+[e0002] Epoch[ 14  / 150 ] Iteration[ 90  / 391 ] Loss: 0.9821 Time: 00:00:03:16
+[e0002] Epoch[ 14  / 150 ] Iteration[ 100 / 391 ] Loss: 1.0500 Time: 00:00:03:16
+[e0002] Epoch[ 14  / 150 ] Iteration[ 110 / 391 ] Loss: 1.2913 Time: 00:00:03:17
+[e0002] Epoch[ 14  / 150 ] Iteration[ 120 / 391 ] Loss: 1.0118 Time: 00:00:03:17
+[e0002] Epoch[ 14  / 150 ] Iteration[ 130 / 391 ] Loss: 1.0652 Time: 00:00:03:17
+[e0002] Epoch[ 14  / 150 ] Iteration[ 140 / 391 ] Loss: 1.0962 Time: 00:00:03:17
+[e0002] Epoch[ 14  / 150 ] Iteration[ 150 / 391 ] Loss: 1.1960 Time: 00:00:03:17
+[e0002] Epoch[ 14  / 150 ] Iteration[ 160 / 391 ] Loss: 0.9997 Time: 00:00:03:17
+[e0002] Epoch[ 14  / 150 ] Iteration[ 170 / 391 ] Loss: 0.9927 Time: 00:00:03:18
+[e0002] Epoch[ 14  / 150 ] Iteration[ 180 / 391 ] Loss: 0.9254 Time: 00:00:03:18
+[e0002] Epoch[ 14  / 150 ] Iteration[ 190 / 391 ] Loss: 1.1493 Time: 00:00:03:18
+[e0002] Epoch[ 14  / 150 ] Iteration[ 200 / 391 ] Loss: 1.1178 Time: 00:00:03:18
+[e0002] Epoch[ 14  / 150 ] Iteration[ 210 / 391 ] Loss: 1.1735 Time: 00:00:03:18
+[e0002] Epoch[ 14  / 150 ] Iteration[ 220 / 391 ] Loss: 1.0916 Time: 00:00:03:18
+[e0002] Epoch[ 14  / 150 ] Iteration[ 230 / 391 ] Loss: 1.0048 Time: 00:00:03:19
+[e0002] Epoch[ 14  / 150 ] Iteration[ 240 / 391 ] Loss: 0.9640 Time: 00:00:03:19
+[e0002] Epoch[ 14  / 150 ] Iteration[ 250 / 391 ] Loss: 1.0258 Time: 00:00:03:19
+[e0002] Epoch[ 14  / 150 ] Iteration[ 260 / 391 ] Loss: 0.9275 Time: 00:00:03:19
+[e0002] Epoch[ 14  / 150 ] Iteration[ 270 / 391 ] Loss: 1.0418 Time: 00:00:03:19
+[e0002] Epoch[ 14  / 150 ] Iteration[ 280 / 391 ] Loss: 1.0743 Time: 00:00:03:19
+[e0002] Epoch[ 14  / 150 ] Iteration[ 290 / 391 ] Loss: 0.9701 Time: 00:00:03:20
+[e0002] Epoch[ 14  / 150 ] Iteration[ 300 / 391 ] Loss: 0.9813 Time: 00:00:03:20
+[e0002] Epoch[ 14  / 150 ] Iteration[ 310 / 391 ] Loss: 1.0681 Time: 00:00:03:20
+[e0002] Epoch[ 14  / 150 ] Iteration[ 320 / 391 ] Loss: 1.2554 Time: 00:00:03:20
+[e0002] Epoch[ 14  / 150 ] Iteration[ 330 / 391 ] Loss: 1.1484 Time: 00:00:03:20
+[e0002] Epoch[ 14  / 150 ] Iteration[ 340 / 391 ] Loss: 1.1560 Time: 00:00:03:20
+[e0002] Epoch[ 14  / 150 ] Iteration[ 350 / 391 ] Loss: 0.9274 Time: 00:00:03:21
+[e0002] Epoch[ 14  / 150 ] Iteration[ 360 / 391 ] Loss: 1.1464 Time: 00:00:03:21
+[e0002] Epoch[ 14  / 150 ] Iteration[ 370 / 391 ] Loss: 1.1055 Time: 00:00:03:21
+[e0002] Epoch[ 14  / 150 ] Iteration[ 380 / 391 ] Loss: 1.1485 Time: 00:00:03:21
+[e0002] Epoch[ 14  / 150 ] Iteration[ 390 / 391 ] Loss: 0.9659 Time: 00:00:03:21
+Epoch [ 15  ]: Train Avg accuracy: 63.2120; Train Avg loss: 1.0607 
+               Valid Avg accuracy: 65.0900; Valid Avg loss: 1.0150 
+               Time: 00:00:03:28
+[e0002] Epoch[ 15  / 150 ] Iteration[  0  / 391 ] Loss: 1.0431 Time: 00:00:03:29
+[e0002] Epoch[ 15  / 150 ] Iteration[ 10  / 391 ] Loss: 1.0392 Time: 00:00:03:29
+[e0002] Epoch[ 15  / 150 ] Iteration[ 20  / 391 ] Loss: 1.0129 Time: 00:00:03:29
+[e0002] Epoch[ 15  / 150 ] Iteration[ 30  / 391 ] Loss: 1.1271 Time: 00:00:03:29
+[e0002] Epoch[ 15  / 150 ] Iteration[ 40  / 391 ] Loss: 1.0819 Time: 00:00:03:29
+[e0002] Epoch[ 15  / 150 ] Iteration[ 50  / 391 ] Loss: 1.0794 Time: 00:00:03:29
+[e0002] Epoch[ 15  / 150 ] Iteration[ 60  / 391 ] Loss: 0.8595 Time: 00:00:03:29
+[e0002] Epoch[ 15  / 150 ] Iteration[ 70  / 391 ] Loss: 1.1237 Time: 00:00:03:30
+[e0002] Epoch[ 15  / 150 ] Iteration[ 80  / 391 ] Loss: 1.3096 Time: 00:00:03:30
+[e0002] Epoch[ 15  / 150 ] Iteration[ 90  / 391 ] Loss: 1.1419 Time: 00:00:03:30
+[e0002] Epoch[ 15  / 150 ] Iteration[ 100 / 391 ] Loss: 1.0869 Time: 00:00:03:30
+[e0002] Epoch[ 15  / 150 ] Iteration[ 110 / 391 ] Loss: 1.1251 Time: 00:00:03:30
+[e0002] Epoch[ 15  / 150 ] Iteration[ 120 / 391 ] Loss: 0.9850 Time: 00:00:03:30
+[e0002] Epoch[ 15  / 150 ] Iteration[ 130 / 391 ] Loss: 1.0561 Time: 00:00:03:31
+[e0002] Epoch[ 15  / 150 ] Iteration[ 140 / 391 ] Loss: 1.1128 Time: 00:00:03:31
+[e0002] Epoch[ 15  / 150 ] Iteration[ 150 / 391 ] Loss: 1.2282 Time: 00:00:03:31
+[e0002] Epoch[ 15  / 150 ] Iteration[ 160 / 391 ] Loss: 1.0543 Time: 00:00:03:31
+[e0002] Epoch[ 15  / 150 ] Iteration[ 170 / 391 ] Loss: 0.9254 Time: 00:00:03:31
+[e0002] Epoch[ 15  / 150 ] Iteration[ 180 / 391 ] Loss: 1.0406 Time: 00:00:03:31
+[e0002] Epoch[ 15  / 150 ] Iteration[ 190 / 391 ] Loss: 0.8563 Time: 00:00:03:32
+[e0002] Epoch[ 15  / 150 ] Iteration[ 200 / 391 ] Loss: 0.9707 Time: 00:00:03:32
+[e0002] Epoch[ 15  / 150 ] Iteration[ 210 / 391 ] Loss: 1.0804 Time: 00:00:03:32
+[e0002] Epoch[ 15  / 150 ] Iteration[ 220 / 391 ] Loss: 1.2012 Time: 00:00:03:32
+[e0002] Epoch[ 15  / 150 ] Iteration[ 230 / 391 ] Loss: 0.8558 Time: 00:00:03:32
+[e0002] Epoch[ 15  / 150 ] Iteration[ 240 / 391 ] Loss: 0.9396 Time: 00:00:03:32
+[e0002] Epoch[ 15  / 150 ] Iteration[ 250 / 391 ] Loss: 1.1476 Time: 00:00:03:33
+[e0002] Epoch[ 15  / 150 ] Iteration[ 260 / 391 ] Loss: 0.8548 Time: 00:00:03:33
+[e0002] Epoch[ 15  / 150 ] Iteration[ 270 / 391 ] Loss: 0.8994 Time: 00:00:03:33
+[e0002] Epoch[ 15  / 150 ] Iteration[ 280 / 391 ] Loss: 1.1052 Time: 00:00:03:33
+[e0002] Epoch[ 15  / 150 ] Iteration[ 290 / 391 ] Loss: 1.1523 Time: 00:00:03:33
+[e0002] Epoch[ 15  / 150 ] Iteration[ 300 / 391 ] Loss: 1.1598 Time: 00:00:03:34
+[e0002] Epoch[ 15  / 150 ] Iteration[ 310 / 391 ] Loss: 0.9352 Time: 00:00:03:34
+[e0002] Epoch[ 15  / 150 ] Iteration[ 320 / 391 ] Loss: 1.0472 Time: 00:00:03:34
+[e0002] Epoch[ 15  / 150 ] Iteration[ 330 / 391 ] Loss: 0.9488 Time: 00:00:03:34
+[e0002] Epoch[ 15  / 150 ] Iteration[ 340 / 391 ] Loss: 0.9627 Time: 00:00:03:34
+[e0002] Epoch[ 15  / 150 ] Iteration[ 350 / 391 ] Loss: 1.1535 Time: 00:00:03:34
+[e0002] Epoch[ 15  / 150 ] Iteration[ 360 / 391 ] Loss: 1.1124 Time: 00:00:03:35
+[e0002] Epoch[ 15  / 150 ] Iteration[ 370 / 391 ] Loss: 0.9472 Time: 00:00:03:35
+[e0002] Epoch[ 15  / 150 ] Iteration[ 380 / 391 ] Loss: 1.0308 Time: 00:00:03:35
+[e0002] Epoch[ 15  / 150 ] Iteration[ 390 / 391 ] Loss: 1.1754 Time: 00:00:03:35
+Epoch [ 16  ]: Train Avg accuracy: 63.1620; Train Avg loss: 1.0456 
+               Valid Avg accuracy: 64.6800; Valid Avg loss: 1.0202 
+               Time: 00:00:03:42
+[e0002] Epoch[ 16  / 150 ] Iteration[  0  / 391 ] Loss: 0.9192 Time: 00:00:03:42
+[e0002] Epoch[ 16  / 150 ] Iteration[ 10  / 391 ] Loss: 1.0394 Time: 00:00:03:42
+[e0002] Epoch[ 16  / 150 ] Iteration[ 20  / 391 ] Loss: 0.9111 Time: 00:00:03:43
+[e0002] Epoch[ 16  / 150 ] Iteration[ 30  / 391 ] Loss: 0.8949 Time: 00:00:03:43
+[e0002] Epoch[ 16  / 150 ] Iteration[ 40  / 391 ] Loss: 1.1309 Time: 00:00:03:43
+[e0002] Epoch[ 16  / 150 ] Iteration[ 50  / 391 ] Loss: 0.9528 Time: 00:00:03:43
+[e0002] Epoch[ 16  / 150 ] Iteration[ 60  / 391 ] Loss: 0.8072 Time: 00:00:03:43
+[e0002] Epoch[ 16  / 150 ] Iteration[ 70  / 391 ] Loss: 1.1507 Time: 00:00:03:43
+[e0002] Epoch[ 16  / 150 ] Iteration[ 80  / 391 ] Loss: 0.9736 Time: 00:00:03:44
+[e0002] Epoch[ 16  / 150 ] Iteration[ 90  / 391 ] Loss: 1.0058 Time: 00:00:03:44
+[e0002] Epoch[ 16  / 150 ] Iteration[ 100 / 391 ] Loss: 0.9587 Time: 00:00:03:44
+[e0002] Epoch[ 16  / 150 ] Iteration[ 110 / 391 ] Loss: 0.8498 Time: 00:00:03:44
+[e0002] Epoch[ 16  / 150 ] Iteration[ 120 / 391 ] Loss: 1.0175 Time: 00:00:03:44
+[e0002] Epoch[ 16  / 150 ] Iteration[ 130 / 391 ] Loss: 1.2130 Time: 00:00:03:44
+[e0002] Epoch[ 16  / 150 ] Iteration[ 140 / 391 ] Loss: 1.0393 Time: 00:00:03:45
+[e0002] Epoch[ 16  / 150 ] Iteration[ 150 / 391 ] Loss: 0.8499 Time: 00:00:03:45
+[e0002] Epoch[ 16  / 150 ] Iteration[ 160 / 391 ] Loss: 0.9382 Time: 00:00:03:45
+[e0002] Epoch[ 16  / 150 ] Iteration[ 170 / 391 ] Loss: 0.9940 Time: 00:00:03:45
+[e0002] Epoch[ 16  / 150 ] Iteration[ 180 / 391 ] Loss: 1.1179 Time: 00:00:03:45
+[e0002] Epoch[ 16  / 150 ] Iteration[ 190 / 391 ] Loss: 1.2244 Time: 00:00:03:45
+[e0002] Epoch[ 16  / 150 ] Iteration[ 200 / 391 ] Loss: 1.0175 Time: 00:00:03:46
+[e0002] Epoch[ 16  / 150 ] Iteration[ 210 / 391 ] Loss: 1.1254 Time: 00:00:03:46
+[e0002] Epoch[ 16  / 150 ] Iteration[ 220 / 391 ] Loss: 1.0783 Time: 00:00:03:46
+[e0002] Epoch[ 16  / 150 ] Iteration[ 230 / 391 ] Loss: 1.0414 Time: 00:00:03:46
+[e0002] Epoch[ 16  / 150 ] Iteration[ 240 / 391 ] Loss: 0.9387 Time: 00:00:03:46
+[e0002] Epoch[ 16  / 150 ] Iteration[ 250 / 391 ] Loss: 1.0851 Time: 00:00:03:46
+[e0002] Epoch[ 16  / 150 ] Iteration[ 260 / 391 ] Loss: 1.0434 Time: 00:00:03:47
+[e0002] Epoch[ 16  / 150 ] Iteration[ 270 / 391 ] Loss: 1.0341 Time: 00:00:03:47
+[e0002] Epoch[ 16  / 150 ] Iteration[ 280 / 391 ] Loss: 1.0931 Time: 00:00:03:47
+[e0002] Epoch[ 16  / 150 ] Iteration[ 290 / 391 ] Loss: 1.0822 Time: 00:00:03:47
+[e0002] Epoch[ 16  / 150 ] Iteration[ 300 / 391 ] Loss: 1.2450 Time: 00:00:03:47
+[e0002] Epoch[ 16  / 150 ] Iteration[ 310 / 391 ] Loss: 1.1074 Time: 00:00:03:47
+[e0002] Epoch[ 16  / 150 ] Iteration[ 320 / 391 ] Loss: 0.9568 Time: 00:00:03:48
+[e0002] Epoch[ 16  / 150 ] Iteration[ 330 / 391 ] Loss: 1.0590 Time: 00:00:03:48
+[e0002] Epoch[ 16  / 150 ] Iteration[ 340 / 391 ] Loss: 0.9375 Time: 00:00:03:48
+[e0002] Epoch[ 16  / 150 ] Iteration[ 350 / 391 ] Loss: 0.9458 Time: 00:00:03:48
+[e0002] Epoch[ 16  / 150 ] Iteration[ 360 / 391 ] Loss: 0.9119 Time: 00:00:03:48
+[e0002] Epoch[ 16  / 150 ] Iteration[ 370 / 391 ] Loss: 1.0676 Time: 00:00:03:48
+[e0002] Epoch[ 16  / 150 ] Iteration[ 380 / 391 ] Loss: 1.1812 Time: 00:00:03:49
+[e0002] Epoch[ 16  / 150 ] Iteration[ 390 / 391 ] Loss: 1.0285 Time: 00:00:03:49
+Epoch [ 17  ]: Train Avg accuracy: 64.6680; Train Avg loss: 1.0110 
+               Valid Avg accuracy: 65.4800; Valid Avg loss: 1.0096 
+               Time: 00:00:03:56
+[e0002] Epoch[ 17  / 150 ] Iteration[  0  / 391 ] Loss: 0.9964 Time: 00:00:03:56
+[e0002] Epoch[ 17  / 150 ] Iteration[ 10  / 391 ] Loss: 1.2212 Time: 00:00:03:56
+[e0002] Epoch[ 17  / 150 ] Iteration[ 20  / 391 ] Loss: 0.9885 Time: 00:00:03:56
+[e0002] Epoch[ 17  / 150 ] Iteration[ 30  / 391 ] Loss: 0.9738 Time: 00:00:03:57
+[e0002] Epoch[ 17  / 150 ] Iteration[ 40  / 391 ] Loss: 1.0638 Time: 00:00:03:57
+[e0002] Epoch[ 17  / 150 ] Iteration[ 50  / 391 ] Loss: 1.0659 Time: 00:00:03:57
+[e0002] Epoch[ 17  / 150 ] Iteration[ 60  / 391 ] Loss: 0.9143 Time: 00:00:03:57
+[e0002] Epoch[ 17  / 150 ] Iteration[ 70  / 391 ] Loss: 0.9543 Time: 00:00:03:57
+[e0002] Epoch[ 17  / 150 ] Iteration[ 80  / 391 ] Loss: 0.9915 Time: 00:00:03:57
+[e0002] Epoch[ 17  / 150 ] Iteration[ 90  / 391 ] Loss: 1.0558 Time: 00:00:03:58
+[e0002] Epoch[ 17  / 150 ] Iteration[ 100 / 391 ] Loss: 1.0251 Time: 00:00:03:58
+[e0002] Epoch[ 17  / 150 ] Iteration[ 110 / 391 ] Loss: 1.0987 Time: 00:00:03:58
+[e0002] Epoch[ 17  / 150 ] Iteration[ 120 / 391 ] Loss: 0.8918 Time: 00:00:03:58
+[e0002] Epoch[ 17  / 150 ] Iteration[ 130 / 391 ] Loss: 1.0507 Time: 00:00:03:58
+[e0002] Epoch[ 17  / 150 ] Iteration[ 140 / 391 ] Loss: 1.1473 Time: 00:00:03:58
+[e0002] Epoch[ 17  / 150 ] Iteration[ 150 / 391 ] Loss: 1.0083 Time: 00:00:03:58
+[e0002] Epoch[ 17  / 150 ] Iteration[ 160 / 391 ] Loss: 1.1188 Time: 00:00:03:59
+[e0002] Epoch[ 17  / 150 ] Iteration[ 170 / 391 ] Loss: 1.1812 Time: 00:00:03:59
+[e0002] Epoch[ 17  / 150 ] Iteration[ 180 / 391 ] Loss: 1.1843 Time: 00:00:03:59
+[e0002] Epoch[ 17  / 150 ] Iteration[ 190 / 391 ] Loss: 1.0016 Time: 00:00:03:59
+[e0002] Epoch[ 17  / 150 ] Iteration[ 200 / 391 ] Loss: 1.0171 Time: 00:00:03:59
+[e0002] Epoch[ 17  / 150 ] Iteration[ 210 / 391 ] Loss: 1.0729 Time: 00:00:03:59
+[e0002] Epoch[ 17  / 150 ] Iteration[ 220 / 391 ] Loss: 1.0645 Time: 00:00:04:00
+[e0002] Epoch[ 17  / 150 ] Iteration[ 230 / 391 ] Loss: 1.1857 Time: 00:00:04:00
+[e0002] Epoch[ 17  / 150 ] Iteration[ 240 / 391 ] Loss: 0.9934 Time: 00:00:04:00
+[e0002] Epoch[ 17  / 150 ] Iteration[ 250 / 391 ] Loss: 1.0140 Time: 00:00:04:00
+[e0002] Epoch[ 17  / 150 ] Iteration[ 260 / 391 ] Loss: 1.1090 Time: 00:00:04:00
+[e0002] Epoch[ 17  / 150 ] Iteration[ 270 / 391 ] Loss: 0.8357 Time: 00:00:04:01
+[e0002] Epoch[ 17  / 150 ] Iteration[ 280 / 391 ] Loss: 1.0244 Time: 00:00:04:01
+[e0002] Epoch[ 17  / 150 ] Iteration[ 290 / 391 ] Loss: 1.0296 Time: 00:00:04:01
+[e0002] Epoch[ 17  / 150 ] Iteration[ 300 / 391 ] Loss: 0.8508 Time: 00:00:04:01
+[e0002] Epoch[ 17  / 150 ] Iteration[ 310 / 391 ] Loss: 1.0077 Time: 00:00:04:01
+[e0002] Epoch[ 17  / 150 ] Iteration[ 320 / 391 ] Loss: 1.0289 Time: 00:00:04:01
+[e0002] Epoch[ 17  / 150 ] Iteration[ 330 / 391 ] Loss: 0.9901 Time: 00:00:04:01
+[e0002] Epoch[ 17  / 150 ] Iteration[ 340 / 391 ] Loss: 1.1121 Time: 00:00:04:02
+[e0002] Epoch[ 17  / 150 ] Iteration[ 350 / 391 ] Loss: 1.0688 Time: 00:00:04:02
+[e0002] Epoch[ 17  / 150 ] Iteration[ 360 / 391 ] Loss: 0.9425 Time: 00:00:04:02
+[e0002] Epoch[ 17  / 150 ] Iteration[ 370 / 391 ] Loss: 1.0501 Time: 00:00:04:02
+[e0002] Epoch[ 17  / 150 ] Iteration[ 380 / 391 ] Loss: 0.9672 Time: 00:00:04:02
+[e0002] Epoch[ 17  / 150 ] Iteration[ 390 / 391 ] Loss: 1.0269 Time: 00:00:04:02
+Epoch [ 18  ]: Train Avg accuracy: 64.9820; Train Avg loss: 0.9921 
+               Valid Avg accuracy: 66.1300; Valid Avg loss: 0.9773 
+               Time: 00:00:04:10
+               BEST MODEL SAVED
+[e0002] Epoch[ 18  / 150 ] Iteration[  0  / 391 ] Loss: 1.2345 Time: 00:00:04:10
+[e0002] Epoch[ 18  / 150 ] Iteration[ 10  / 391 ] Loss: 0.9681 Time: 00:00:04:10
+[e0002] Epoch[ 18  / 150 ] Iteration[ 20  / 391 ] Loss: 0.9843 Time: 00:00:04:10
+[e0002] Epoch[ 18  / 150 ] Iteration[ 30  / 391 ] Loss: 0.9675 Time: 00:00:04:10
+[e0002] Epoch[ 18  / 150 ] Iteration[ 40  / 391 ] Loss: 1.0479 Time: 00:00:04:10
+[e0002] Epoch[ 18  / 150 ] Iteration[ 50  / 391 ] Loss: 1.0313 Time: 00:00:04:11
+[e0002] Epoch[ 18  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1526 Time: 00:00:04:11
+[e0002] Epoch[ 18  / 150 ] Iteration[ 70  / 391 ] Loss: 0.9888 Time: 00:00:04:11
+[e0002] Epoch[ 18  / 150 ] Iteration[ 80  / 391 ] Loss: 1.0336 Time: 00:00:04:11
+[e0002] Epoch[ 18  / 150 ] Iteration[ 90  / 391 ] Loss: 1.0027 Time: 00:00:04:11
+[e0002] Epoch[ 18  / 150 ] Iteration[ 100 / 391 ] Loss: 0.9874 Time: 00:00:04:11
+[e0002] Epoch[ 18  / 150 ] Iteration[ 110 / 391 ] Loss: 1.1850 Time: 00:00:04:12
+[e0002] Epoch[ 18  / 150 ] Iteration[ 120 / 391 ] Loss: 0.8936 Time: 00:00:04:12
+[e0002] Epoch[ 18  / 150 ] Iteration[ 130 / 391 ] Loss: 0.9847 Time: 00:00:04:12
+[e0002] Epoch[ 18  / 150 ] Iteration[ 140 / 391 ] Loss: 0.9685 Time: 00:00:04:12
+[e0002] Epoch[ 18  / 150 ] Iteration[ 150 / 391 ] Loss: 1.0184 Time: 00:00:04:12
+[e0002] Epoch[ 18  / 150 ] Iteration[ 160 / 391 ] Loss: 0.8216 Time: 00:00:04:12
+[e0002] Epoch[ 18  / 150 ] Iteration[ 170 / 391 ] Loss: 1.0047 Time: 00:00:04:13
+[e0002] Epoch[ 18  / 150 ] Iteration[ 180 / 391 ] Loss: 0.8938 Time: 00:00:04:13
+[e0002] Epoch[ 18  / 150 ] Iteration[ 190 / 391 ] Loss: 0.9788 Time: 00:00:04:13
+[e0002] Epoch[ 18  / 150 ] Iteration[ 200 / 391 ] Loss: 1.1241 Time: 00:00:04:13
+[e0002] Epoch[ 18  / 150 ] Iteration[ 210 / 391 ] Loss: 1.0605 Time: 00:00:04:13
+[e0002] Epoch[ 18  / 150 ] Iteration[ 220 / 391 ] Loss: 1.0304 Time: 00:00:04:13
+[e0002] Epoch[ 18  / 150 ] Iteration[ 230 / 391 ] Loss: 1.0462 Time: 00:00:04:14
+[e0002] Epoch[ 18  / 150 ] Iteration[ 240 / 391 ] Loss: 1.1727 Time: 00:00:04:14
+[e0002] Epoch[ 18  / 150 ] Iteration[ 250 / 391 ] Loss: 0.9612 Time: 00:00:04:14
+[e0002] Epoch[ 18  / 150 ] Iteration[ 260 / 391 ] Loss: 1.0895 Time: 00:00:04:14
+[e0002] Epoch[ 18  / 150 ] Iteration[ 270 / 391 ] Loss: 1.0046 Time: 00:00:04:14
+[e0002] Epoch[ 18  / 150 ] Iteration[ 280 / 391 ] Loss: 0.8875 Time: 00:00:04:14
+[e0002] Epoch[ 18  / 150 ] Iteration[ 290 / 391 ] Loss: 0.9697 Time: 00:00:04:15
+[e0002] Epoch[ 18  / 150 ] Iteration[ 300 / 391 ] Loss: 0.9542 Time: 00:00:04:15
+[e0002] Epoch[ 18  / 150 ] Iteration[ 310 / 391 ] Loss: 0.8965 Time: 00:00:04:15
+[e0002] Epoch[ 18  / 150 ] Iteration[ 320 / 391 ] Loss: 0.8794 Time: 00:00:04:15
+[e0002] Epoch[ 18  / 150 ] Iteration[ 330 / 391 ] Loss: 1.0025 Time: 00:00:04:15
+[e0002] Epoch[ 18  / 150 ] Iteration[ 340 / 391 ] Loss: 1.1446 Time: 00:00:04:15
+[e0002] Epoch[ 18  / 150 ] Iteration[ 350 / 391 ] Loss: 1.0275 Time: 00:00:04:15
+[e0002] Epoch[ 18  / 150 ] Iteration[ 360 / 391 ] Loss: 1.0014 Time: 00:00:04:16
+[e0002] Epoch[ 18  / 150 ] Iteration[ 370 / 391 ] Loss: 0.8771 Time: 00:00:04:16
+[e0002] Epoch[ 18  / 150 ] Iteration[ 380 / 391 ] Loss: 0.7917 Time: 00:00:04:16
+[e0002] Epoch[ 18  / 150 ] Iteration[ 390 / 391 ] Loss: 0.9601 Time: 00:00:04:16
+Epoch [ 19  ]: Train Avg accuracy: 66.0000; Train Avg loss: 0.9798 
+               Valid Avg accuracy: 66.6200; Valid Avg loss: 0.9765 
+               Time: 00:00:04:23
+               BEST MODEL SAVED
+[e0002] Epoch[ 19  / 150 ] Iteration[  0  / 391 ] Loss: 0.9128 Time: 00:00:04:23
+[e0002] Epoch[ 19  / 150 ] Iteration[ 10  / 391 ] Loss: 0.9961 Time: 00:00:04:24
+[e0002] Epoch[ 19  / 150 ] Iteration[ 20  / 391 ] Loss: 1.0666 Time: 00:00:04:24
+[e0002] Epoch[ 19  / 150 ] Iteration[ 30  / 391 ] Loss: 1.0286 Time: 00:00:04:24
+[e0002] Epoch[ 19  / 150 ] Iteration[ 40  / 391 ] Loss: 1.2722 Time: 00:00:04:24
+[e0002] Epoch[ 19  / 150 ] Iteration[ 50  / 391 ] Loss: 1.2203 Time: 00:00:04:24
+[e0002] Epoch[ 19  / 150 ] Iteration[ 60  / 391 ] Loss: 1.1426 Time: 00:00:04:24
+[e0002] Epoch[ 19  / 150 ] Iteration[ 70  / 391 ] Loss: 1.0597 Time: 00:00:04:25
+[e0002] Epoch[ 19  / 150 ] Iteration[ 80  / 391 ] Loss: 0.9799 Time: 00:00:04:25
+[e0002] Epoch[ 19  / 150 ] Iteration[ 90  / 391 ] Loss: 1.1323 Time: 00:00:04:25
+[e0002] Epoch[ 19  / 150 ] Iteration[ 100 / 391 ] Loss: 0.9156 Time: 00:00:04:25
+[e0002] Epoch[ 19  / 150 ] Iteration[ 110 / 391 ] Loss: 0.9423 Time: 00:00:04:25
+[e0002] Epoch[ 19  / 150 ] Iteration[ 120 / 391 ] Loss: 0.8071 Time: 00:00:04:25
+[e0002] Epoch[ 19  / 150 ] Iteration[ 130 / 391 ] Loss: 0.8497 Time: 00:00:04:26
+[e0002] Epoch[ 19  / 150 ] Iteration[ 140 / 391 ] Loss: 1.1528 Time: 00:00:04:26
+[e0002] Epoch[ 19  / 150 ] Iteration[ 150 / 391 ] Loss: 0.8746 Time: 00:00:04:26
+[e0002] Epoch[ 19  / 150 ] Iteration[ 160 / 391 ] Loss: 1.1391 Time: 00:00:04:26
+[e0002] Epoch[ 19  / 150 ] Iteration[ 170 / 391 ] Loss: 0.8964 Time: 00:00:04:26
+[e0002] Epoch[ 19  / 150 ] Iteration[ 180 / 391 ] Loss: 0.8265 Time: 00:00:04:26
+[e0002] Epoch[ 19  / 150 ] Iteration[ 190 / 391 ] Loss: 0.9502 Time: 00:00:04:27
+[e0002] Epoch[ 19  / 150 ] Iteration[ 200 / 391 ] Loss: 1.0338 Time: 00:00:04:27
+[e0002] Epoch[ 19  / 150 ] Iteration[ 210 / 391 ] Loss: 0.9786 Time: 00:00:04:27
+[e0002] Epoch[ 19  / 150 ] Iteration[ 220 / 391 ] Loss: 1.0309 Time: 00:00:04:27
+[e0002] Epoch[ 19  / 150 ] Iteration[ 230 / 391 ] Loss: 0.8831 Time: 00:00:04:27
+[e0002] Epoch[ 19  / 150 ] Iteration[ 240 / 391 ] Loss: 1.0406 Time: 00:00:04:27
+[e0002] Epoch[ 19  / 150 ] Iteration[ 250 / 391 ] Loss: 0.9497 Time: 00:00:04:28
+[e0002] Epoch[ 19  / 150 ] Iteration[ 260 / 391 ] Loss: 1.0217 Time: 00:00:04:28
+[e0002] Epoch[ 19  / 150 ] Iteration[ 270 / 391 ] Loss: 1.1411 Time: 00:00:04:28
+[e0002] Epoch[ 19  / 150 ] Iteration[ 280 / 391 ] Loss: 1.1563 Time: 00:00:04:28
+[e0002] Epoch[ 19  / 150 ] Iteration[ 290 / 391 ] Loss: 0.9920 Time: 00:00:04:28
+[e0002] Epoch[ 19  / 150 ] Iteration[ 300 / 391 ] Loss: 1.0572 Time: 00:00:04:28
+[e0002] Epoch[ 19  / 150 ] Iteration[ 310 / 391 ] Loss: 0.9115 Time: 00:00:04:28
+[e0002] Epoch[ 19  / 150 ] Iteration[ 320 / 391 ] Loss: 1.1086 Time: 00:00:04:29
+[e0002] Epoch[ 19  / 150 ] Iteration[ 330 / 391 ] Loss: 0.9966 Time: 00:00:04:29
+[e0002] Epoch[ 19  / 150 ] Iteration[ 340 / 391 ] Loss: 0.8831 Time: 00:00:04:29
+[e0002] Epoch[ 19  / 150 ] Iteration[ 350 / 391 ] Loss: 1.1084 Time: 00:00:04:29
+[e0002] Epoch[ 19  / 150 ] Iteration[ 360 / 391 ] Loss: 1.0750 Time: 00:00:04:29
+[e0002] Epoch[ 19  / 150 ] Iteration[ 370 / 391 ] Loss: 1.0157 Time: 00:00:04:29
+[e0002] Epoch[ 19  / 150 ] Iteration[ 380 / 391 ] Loss: 0.9266 Time: 00:00:04:30
+[e0002] Epoch[ 19  / 150 ] Iteration[ 390 / 391 ] Loss: 1.1576 Time: 00:00:04:30
+Epoch [ 20  ]: Train Avg accuracy: 66.2700; Train Avg loss: 0.9532 
+               Valid Avg accuracy: 67.1700; Valid Avg loss: 0.9449 
+               Time: 00:00:04:37
+               BEST MODEL SAVED
+[e0002] Epoch[ 20  / 150 ] Iteration[  0  / 391 ] Loss: 0.9115 Time: 00:00:04:37
+[e0002] Epoch[ 20  / 150 ] Iteration[ 10  / 391 ] Loss: 0.8881 Time: 00:00:04:37
+[e0002] Epoch[ 20  / 150 ] Iteration[ 20  / 391 ] Loss: 1.1768 Time: 00:00:04:37
+[e0002] Epoch[ 20  / 150 ] Iteration[ 30  / 391 ] Loss: 1.1077 Time: 00:00:04:38
+[e0002] Epoch[ 20  / 150 ] Iteration[ 40  / 391 ] Loss: 1.0692 Time: 00:00:04:38
+[e0002] Epoch[ 20  / 150 ] Iteration[ 50  / 391 ] Loss: 1.0611 Time: 00:00:04:38
+[e0002] Epoch[ 20  / 150 ] Iteration[ 60  / 391 ] Loss: 0.9103 Time: 00:00:04:38
+[e0002] Epoch[ 20  / 150 ] Iteration[ 70  / 391 ] Loss: 1.2173 Time: 00:00:04:38
+[e0002] Epoch[ 20  / 150 ] Iteration[ 80  / 391 ] Loss: 0.8176 Time: 00:00:04:38
+[e0002] Epoch[ 20  / 150 ] Iteration[ 90  / 391 ] Loss: 0.9374 Time: 00:00:04:39
+[e0002] Epoch[ 20  / 150 ] Iteration[ 100 / 391 ] Loss: 1.1343 Time: 00:00:04:39
+[e0002] Epoch[ 20  / 150 ] Iteration[ 110 / 391 ] Loss: 1.0739 Time: 00:00:04:39
+[e0002] Epoch[ 20  / 150 ] Iteration[ 120 / 391 ] Loss: 0.9681 Time: 00:00:04:39
+[e0002] Epoch[ 20  / 150 ] Iteration[ 130 / 391 ] Loss: 1.0524 Time: 00:00:04:39
+[e0002] Epoch[ 20  / 150 ] Iteration[ 140 / 391 ] Loss: 1.1193 Time: 00:00:04:39
+[e0002] Epoch[ 20  / 150 ] Iteration[ 150 / 391 ] Loss: 0.8611 Time: 00:00:04:40
+[e0002] Epoch[ 20  / 150 ] Iteration[ 160 / 391 ] Loss: 0.8645 Time: 00:00:04:40
+[e0002] Epoch[ 20  / 150 ] Iteration[ 170 / 391 ] Loss: 1.0358 Time: 00:00:04:40
+[e0002] Epoch[ 20  / 150 ] Iteration[ 180 / 391 ] Loss: 0.9023 Time: 00:00:04:40
+[e0002] Epoch[ 20  / 150 ] Iteration[ 190 / 391 ] Loss: 1.0971 Time: 00:00:04:40
+[e0002] Epoch[ 20  / 150 ] Iteration[ 200 / 391 ] Loss: 0.9310 Time: 00:00:04:40
+[e0002] Epoch[ 20  / 150 ] Iteration[ 210 / 391 ] Loss: 0.9574 Time: 00:00:04:41
+[e0002] Epoch[ 20  / 150 ] Iteration[ 220 / 391 ] Loss: 0.7911 Time: 00:00:04:41
+[e0002] Epoch[ 20  / 150 ] Iteration[ 230 / 391 ] Loss: 1.0636 Time: 00:00:04:41
+[e0002] Epoch[ 20  / 150 ] Iteration[ 240 / 391 ] Loss: 0.9423 Time: 00:00:04:41
+[e0002] Epoch[ 20  / 150 ] Iteration[ 250 / 391 ] Loss: 1.1017 Time: 00:00:04:41
+[e0002] Epoch[ 20  / 150 ] Iteration[ 260 / 391 ] Loss: 0.9859 Time: 00:00:04:41
+[e0002] Epoch[ 20  / 150 ] Iteration[ 270 / 391 ] Loss: 1.0220 Time: 00:00:04:42
+[e0002] Epoch[ 20  / 150 ] Iteration[ 280 / 391 ] Loss: 0.9593 Time: 00:00:04:42
+[e0002] Epoch[ 20  / 150 ] Iteration[ 290 / 391 ] Loss: 1.0934 Time: 00:00:04:42
+[e0002] Epoch[ 20  / 150 ] Iteration[ 300 / 391 ] Loss: 1.0723 Time: 00:00:04:42
+[e0002] Epoch[ 20  / 150 ] Iteration[ 310 / 391 ] Loss: 0.8001 Time: 00:00:04:42
+[e0002] Epoch[ 20  / 150 ] Iteration[ 320 / 391 ] Loss: 1.0970 Time: 00:00:04:42
+[e0002] Epoch[ 20  / 150 ] Iteration[ 330 / 391 ] Loss: 0.9450 Time: 00:00:04:42
+[e0002] Epoch[ 20  / 150 ] Iteration[ 340 / 391 ] Loss: 1.1065 Time: 00:00:04:43
+[e0002] Epoch[ 20  / 150 ] Iteration[ 350 / 391 ] Loss: 1.0446 Time: 00:00:04:43
+[e0002] Epoch[ 20  / 150 ] Iteration[ 360 / 391 ] Loss: 0.8442 Time: 00:00:04:43
+[e0002] Epoch[ 20  / 150 ] Iteration[ 370 / 391 ] Loss: 1.0357 Time: 00:00:04:43
+[e0002] Epoch[ 20  / 150 ] Iteration[ 380 / 391 ] Loss: 0.9576 Time: 00:00:04:43
+[e0002] Epoch[ 20  / 150 ] Iteration[ 390 / 391 ] Loss: 0.9412 Time: 00:00:04:43
+Epoch [ 21  ]: Train Avg accuracy: 66.8760; Train Avg loss: 0.9461 
+               Valid Avg accuracy: 67.7100; Valid Avg loss: 0.9443 
+               Time: 00:00:04:51
+               BEST MODEL SAVED
+[e0002] Epoch[ 21  / 150 ] Iteration[  0  / 391 ] Loss: 1.0197 Time: 00:00:04:51
+[e0002] Epoch[ 21  / 150 ] Iteration[ 10  / 391 ] Loss: 1.1034 Time: 00:00:04:51
+[e0002] Epoch[ 21  / 150 ] Iteration[ 20  / 391 ] Loss: 1.0684 Time: 00:00:04:51
+[e0002] Epoch[ 21  / 150 ] Iteration[ 30  / 391 ] Loss: 1.0295 Time: 00:00:04:51
+[e0002] Epoch[ 21  / 150 ] Iteration[ 40  / 391 ] Loss: 0.9992 Time: 00:00:04:51
+[e0002] Epoch[ 21  / 150 ] Iteration[ 50  / 391 ] Loss: 0.9950 Time: 00:00:04:52
+[e0002] Epoch[ 21  / 150 ] Iteration[ 60  / 391 ] Loss: 0.8303 Time: 00:00:04:52
+[e0002] Epoch[ 21  / 150 ] Iteration[ 70  / 391 ] Loss: 0.7679 Time: 00:00:04:52
+[e0002] Epoch[ 21  / 150 ] Iteration[ 80  / 391 ] Loss: 0.8851 Time: 00:00:04:52
+[e0002] Epoch[ 21  / 150 ] Iteration[ 90  / 391 ] Loss: 1.3123 Time: 00:00:04:52
+[e0002] Epoch[ 21  / 150 ] Iteration[ 100 / 391 ] Loss: 1.0450 Time: 00:00:04:52
+[e0002] Epoch[ 21  / 150 ] Iteration[ 110 / 391 ] Loss: 1.1104 Time: 00:00:04:53
+[e0002] Epoch[ 21  / 150 ] Iteration[ 120 / 391 ] Loss: 0.9228 Time: 00:00:04:53
+[e0002] Epoch[ 21  / 150 ] Iteration[ 130 / 391 ] Loss: 0.9777 Time: 00:00:04:53
+[e0002] Epoch[ 21  / 150 ] Iteration[ 140 / 391 ] Loss: 0.9444 Time: 00:00:04:53
+[e0002] Epoch[ 21  / 150 ] Iteration[ 150 / 391 ] Loss: 0.9530 Time: 00:00:04:53
+[e0002] Epoch[ 21  / 150 ] Iteration[ 160 / 391 ] Loss: 0.9267 Time: 00:00:04:53
+[e0002] Epoch[ 21  / 150 ] Iteration[ 170 / 391 ] Loss: 0.9215 Time: 00:00:04:54
+[e0002] Epoch[ 21  / 150 ] Iteration[ 180 / 391 ] Loss: 0.9611 Time: 00:00:04:54
+[e0002] Epoch[ 21  / 150 ] Iteration[ 190 / 391 ] Loss: 0.9596 Time: 00:00:04:54
+[e0002] Epoch[ 21  / 150 ] Iteration[ 200 / 391 ] Loss: 1.0673 Time: 00:00:04:54
+[e0002] Epoch[ 21  / 150 ] Iteration[ 210 / 391 ] Loss: 0.9483 Time: 00:00:04:54
+[e0002] Epoch[ 21  / 150 ] Iteration[ 220 / 391 ] Loss: 0.8637 Time: 00:00:04:54
+[e0002] Epoch[ 21  / 150 ] Iteration[ 230 / 391 ] Loss: 1.0201 Time: 00:00:04:55
+[e0002] Epoch[ 21  / 150 ] Iteration[ 240 / 391 ] Loss: 0.9713 Time: 00:00:04:55
+[e0002] Epoch[ 21  / 150 ] Iteration[ 250 / 391 ] Loss: 1.1284 Time: 00:00:04:55
+[e0002] Epoch[ 21  / 150 ] Iteration[ 260 / 391 ] Loss: 0.8174 Time: 00:00:04:55
+[e0002] Epoch[ 21  / 150 ] Iteration[ 270 / 391 ] Loss: 1.0403 Time: 00:00:04:55

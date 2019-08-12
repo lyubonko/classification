@@ -1,0 +1,1 @@
+ epoch  avg_acc_train avg_loss_train    avg_acc_val   avg_loss_val   elapsed_time
