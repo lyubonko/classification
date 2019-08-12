@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# so libs
+*.so
+*.pyx
+*.o
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pycharm
+.idea
+
+# datasets
+data/cifar10
+data/dtd
+
+# models
+*.pth*
+
+# experiments log files
+#classification/experiments/logs
+
